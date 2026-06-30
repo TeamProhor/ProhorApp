@@ -1,5 +1,5 @@
-import { ListDashes } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { ListDashes } from "@/components/shared/Icons";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import type { DocsTOCProps } from "@/types";
 

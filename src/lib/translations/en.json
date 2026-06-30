@@ -14,17 +14,135 @@
     "greeting": "Good morning",
     "exploreDocs": "Explore docs",
     "getApiKey": "Get API key",
-    "buildAgent": "Build an agent"
+    "buildAgent": "Build an agent",
+    "cards": {
+      "sonnet": {
+        "title": "Prohor Sonnet",
+        "description": "Active Inference",
+        "tokens": "tokens",
+        "text": "Highly balanced model for advanced reasoning and complex tasks."
+      },
+      "haiku": {
+        "title": "Prohor Haiku",
+        "description": "Fast & Cost-Efficient",
+        "text": "Optimized for speed and high throughput workloads at lowest cost."
+      },
+      "spend": {
+        "title": "Monthly Spend",
+        "description": "Billing Cycle Limit",
+        "text": "42.5% of your customized spending limit for the current cycle is consumed."
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "advisor": {
+        "title": "Advisor tool",
+        "description": "Increase intelligence while minimizing cost and token usage. A cheaper model consults a stronger advisor mid-task."
+      },
+      "fastMode": {
+        "title": "Fast mode",
+        "description": "Up to 2.5x faster output on supported models, at premium pricing. Same model, same intelligence."
+      },
+      "batch": {
+        "title": "Batch API",
+        "description": "Move async workloads to the Batch API and save 50% on standard API prices."
+      },
+      "caching": {
+        "title": "Prompt caching",
+        "description": "Reuse prompt prefixes across API calls. Most orgs see input costs drop 50–90%."
+      }
+    },
+    "activity": {
+      "title": "Recent API Activity",
+      "description": "Real-time request logs for this workspace",
+      "table": {
+        "model": "Model",
+        "method": "Method",
+        "status": "Status",
+        "duration": "Duration"
+      }
+    }
   },
   "auth": {
     "signIn": "Sign in to your account",
     "username": "Username",
     "password": "Password",
-    "submit": "Sign in"
+    "submit": "Sign in",
+    "welcomeBack": "Welcome Back!",
+    "newHere": "New here?",
+    "signUpFree": "Sign up for free",
+    "emailPlaceholder": "Your email",
+    "sendMagicLink": "Send me a magic link",
+    "usePassword": "Sign in using password",
+    "or": "or",
+    "sso": "Single Sign-On (SSO)",
+    "termsNoticeStart": "You acknowledge that you have read and agree to our",
+    "termsNoticeMid": "and",
+    "termsNoticeEnd": ".",
+    "termsLink": "Terms of Service",
+    "privacyLink": "Privacy Policy"
   },
   "notFound": {
     "title": "Page not found",
     "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
     "button": "Return Home"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your workspace settings and developer keys",
+    "tabs": {
+      "general": "General",
+      "apiKeys": "API Keys",
+      "billing": "Billing & Limits"
+    },
+    "general": {
+      "workspaceName": "Workspace Name",
+      "workspaceId": "Workspace ID",
+      "saveChanges": "Save Changes"
+    },
+    "apiKeys": {
+      "createKey": "Create API Key",
+      "keyName": "Key Name",
+      "status": "Status",
+      "action": "Action",
+      "active": "Active",
+      "revoke": "Revoke",
+      "modalTitle": "Create New API Key",
+      "modalDescription": "Give your new key a descriptive name to identify it later.",
+      "nameLabel": "Key Name",
+      "placeholder": "e.g., Development Key",
+      "cancel": "Cancel",
+      "create": "Create Key"
+    },
+    "billing": {
+      "monthlyBudget": "Monthly Budget Limit (USD)",
+      "spendAlert": "Spend Warning Threshold (%)",
+      "saveLimits": "Save Limits"
+    }
+  },
+  "upgrade": {
+    "title": "Plans that grow with you",
+    "individual": "Individual",
+    "team": "Team and Enterprise",
+    "free": {
+      "title": "Free",
+      "desc": "Meet Prohor",
+      "price": "$0",
+      "button": "Use Prohor for free"
+    },
+    "pro": {
+      "title": "Pro",
+      "desc": "Research, code, and organize",
+      "price": "$17",
+      "period": "USD / month billed annually",
+      "button": "Get Pro plan"
+    },
+    "max": {
+      "title": "Max",
+      "desc": "Higher limits, priority access",
+      "price": "From $100",
+      "period": "USD / month billed monthly",
+      "button": "Get Max plan"
+    }
   }
 }

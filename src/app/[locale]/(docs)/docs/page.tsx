@@ -6,7 +6,7 @@ export default async function DocsIndexPage({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  redirect(`/${locale}/docs/getting-started/overview`);
+  redirect(`/${locale}/docs/getting-started/intro`);
 }
 
 export function generateStaticParams() {

@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslation } from "@/components/shared/LanguageProvider";
 import Logo from "@/components/shared/Logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,6 +9,8 @@ import { Separator } from "@/components/ui/separator";
 import type { LoginFormProps } from "@/types";
 
 export default function LoginForm(_props: Readonly<LoginFormProps>) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex items-center justify-center min-h-dvh bg-background">
       <Card className="w-full max-w-sm rounded-xl px-6 py-10 pt-14 border border-border bg-card text-card-foreground">
@@ -15,39 +20,45 @@ export default function LoginForm(_props: Readonly<LoginFormProps>) {
 
             <div className="flex flex-col gap-2 text-center">
               <h1 className="text-balance text-3xl font-normal tracking-tight font-serif text-foreground">
-                আবারো স্বাগতম!
+                {t("auth.welcomeBack")}
               </h1>
               <p className="text-pretty text-muted-foreground text-sm font-sans">
-                এখানে প্রথমবার?{" "}
+                {t("auth.newHere")}{" "}
                 <a
                   href="/#"
                   className="text-primary hover:underline font-medium"
                 >
-                  বিনামূল্যে সাইন আপ করুন
+                  {t("auth.signUpFree")}
                 </a>
               </p>
             </div>
 
             <div className="w-full flex flex-col gap-4">
-              <Input type="email" placeholder="আপনার ইমেইল" className="w-full" />
+              <Input
+                type="email"
+                placeholder={t("auth.emailPlaceholder")}
+                className="w-full"
+              />
               <div className="flex flex-col gap-2">
                 <Button
                   className="w-full text-primary-foreground bg-primary hover:bg-primary/95"
                   size="lg"
                 >
-                  আমাকে ম্যাজিক লিঙ্ক পাঠান
+                  {t("auth.sendMagicLink")}
                 </Button>
                 <Button
                   variant="link"
                   className="w-full text-sm text-muted-foreground hover:text-foreground"
                 >
-                  পাসওয়ার্ড ব্যবহার করে সাইন ইন করুন
+                  {t("auth.usePassword")}
                 </Button>
               </div>
 
               <div className="flex items-center gap-4 py-2">
                 <Separator className="flex-1 bg-border" />
-                <span className="text-xs text-muted-foreground">অথবা</span>
+                <span className="text-xs text-muted-foreground">
+                  {t("auth.or")}
+                </span>
                 <Separator className="flex-1 bg-border" />
               </div>
 
@@ -56,20 +67,20 @@ export default function LoginForm(_props: Readonly<LoginFormProps>) {
                 className="w-full border-border hover:bg-muted"
                 size="lg"
               >
-                সিঙ্গেল সাইন-অন (SSO)
+                {t("auth.sso")}
               </Button>
             </div>
 
             <p className="text-pretty text-center text-xs w-11/12 text-muted-foreground font-sans">
-              আপনি স্বীকার করছেন যে আপনি আমাদের{" "}
+              {t("auth.termsNoticeStart")}{" "}
               <a href="/#" className="underline hover:text-foreground">
-                সেবাশর্তাবলী
+                {t("auth.termsLink")}
               </a>{" "}
-              এবং{" "}
+              {t("auth.termsNoticeMid")}{" "}
               <a href="/#" className="underline hover:text-foreground">
-                গোপনীয়তা नीति
+                {t("auth.privacyLink")}
               </a>{" "}
-              পড়েছেন এবং সম্মত হয়েছেন।
+              {t("auth.termsNoticeEnd")}
             </p>
           </div>
         </CardContent>

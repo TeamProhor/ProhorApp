@@ -1,18 +1,68 @@
 "use client";
 
-import { List } from "@phosphor-icons/react";
 import Link from "next/link";
+import { Sidebar } from "@/components/docs/Sidebar";
+import { List } from "@/components/shared/Icons";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import type { DocsTabsProps } from "@/types";
-import { Sidebar } from "./Sidebar";
+
+export interface TabItem {
+  label: string;
+  active: boolean;
+  href?: string;
+  onClick?: () => void;
+}
+
+interface GenericTabsProps extends DocsTabsProps {
+  items?: TabItem[];
+}
 
 export function Tabs({
   sections = [],
   currentSection = "",
   docs = [],
   currentSlug = [],
-}: Readonly<DocsTabsProps>) {
+  items,
+}: Readonly<GenericTabsProps>) {
+  if (items) {
+    return (
+      <nav className="h-12 border-b border-border flex items-center px-4 md:px-6 overflow-x-auto shrink-0 gap-6 text-sm font-medium text-muted-foreground bg-background sticky top-16 z-40">
+        {items.map((item) => {
+          if (item.href) {
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`h-full flex items-center whitespace-nowrap transition-colors ${
+                  item.active
+                    ? "text-primary font-semibold border-b-2 border-primary"
+                    : "hover:text-foreground"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          }
+          return (
+            <button
+              key={item.label}
+              type="button"
+              onClick={item.onClick}
+              className={`h-full flex items-center whitespace-nowrap transition-colors border-0 bg-transparent px-0 cursor-pointer ${
+                item.active
+                  ? "text-primary font-semibold border-b-2 border-primary"
+                  : "hover:text-foreground"
+              }`}
+            >
+              {item.label}
+            </button>
+          );
+        })}
+      </nav>
+    );
+  }
+
   const uniqueSections = sections.length
     ? sections
     : Array.from(new Set(docs.map((d) => d.metadata.section || "General")));

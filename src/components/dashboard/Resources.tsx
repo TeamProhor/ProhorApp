@@ -6,40 +6,39 @@ import {
   Queue,
   ShieldCheck,
 } from "@phosphor-icons/react";
+import { useTranslation } from "@/components/shared/LanguageProvider";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 import type { ResourcesProps } from "@/types";
 
 export function Resources(_props: Readonly<ResourcesProps>) {
+  const { t } = useTranslation();
+
   const resources = [
     {
       id: "advisor",
-      title: "Advisor tool",
-      description:
-        "Increase intelligence while minimizing cost and token usage. A cheaper model consults a stronger advisor mid-task.",
+      title: t("dashboard.resources.advisor.title"),
+      description: t("dashboard.resources.advisor.description"),
       icon: ShieldCheck,
       badge: "Beta",
     },
     {
       id: "fast_mode",
-      title: "Fast mode",
-      description:
-        "Up to 2.5x faster output on supported models, at premium pricing. Same model, same intelligence.",
+      title: t("dashboard.resources.fastMode.title"),
+      description: t("dashboard.resources.fastMode.description"),
       icon: FastForward,
     },
     {
       id: "batch",
-      title: "Batch API",
-      description:
-        "Move async workloads to the Batch API and save 50% on standard API prices.",
+      title: t("dashboard.resources.batch.title"),
+      description: t("dashboard.resources.batch.description"),
       icon: Queue,
     },
     {
       id: "caching",
-      title: "Prompt caching",
-      description:
-        "Reuse prompt prefixes across API calls. Most orgs see input costs drop 50–90%.",
+      title: t("dashboard.resources.caching.title"),
+      description: t("dashboard.resources.caching.description"),
       icon: Database,
     },
   ];
@@ -47,7 +46,7 @@ export function Resources(_props: Readonly<ResourcesProps>) {
   return (
     <section className="flex flex-col gap-3">
       <h2 className="font-serif text-xl font-normal text-foreground px-2">
-        Resources
+        {t("dashboard.resources.title")}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {resources.map((res) => {

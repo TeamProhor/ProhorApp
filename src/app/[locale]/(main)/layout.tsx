@@ -10,8 +10,9 @@ export default function MainLayout({ children }: Readonly<MainLayoutProps>) {
       suppressHydrationWarning
       style={
         {
-          "--sidebar-width": "calc(var(--spacing) * 72)",
-          "--header-height": "calc(var(--spacing) * 12)",
+          "--sidebar-width": "16rem",
+          "--sidebar-width-icon": "3rem",
+          "--header-height": "3rem",
         } as React.CSSProperties
       }
     >

@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslation } from "@/components/shared/LanguageProvider";
 import {
   Card,
   CardContent,
@@ -8,14 +11,16 @@ import {
 import type { ActivityTableProps } from "@/types";
 
 export function ActivityTable(_props: Readonly<ActivityTableProps>) {
+  const { t } = useTranslation();
+
   return (
     <Card className="rounded-xl border border-border bg-card text-card-foreground">
       <CardHeader>
         <CardTitle className="font-serif text-2xl font-normal text-foreground">
-          Recent API Activity
+          {t("dashboard.activity.title")}
         </CardTitle>
         <CardDescription className="text-xs text-muted-foreground font-sans">
-          Real-time request logs for this workspace
+          {t("dashboard.activity.description")}
         </CardDescription>
       </CardHeader>
       <CardContent className="font-sans px-2 md:px-6">
@@ -23,10 +28,18 @@ export function ActivityTable(_props: Readonly<ActivityTableProps>) {
           <table className="w-full min-w-[500px] text-left border-collapse">
             <thead>
               <tr className="border-b border-border text-xs text-muted-foreground">
-                <th className="py-3 px-2 md:px-4 font-medium">Model</th>
-                <th className="py-3 px-2 md:px-4 font-medium">Method</th>
-                <th className="py-3 px-2 md:px-4 font-medium">Status</th>
-                <th className="py-3 px-2 md:px-4 font-medium">Duration</th>
+                <th className="py-3 px-2 md:px-4 font-medium">
+                  {t("dashboard.activity.table.model")}
+                </th>
+                <th className="py-3 px-2 md:px-4 font-medium">
+                  {t("dashboard.activity.table.method")}
+                </th>
+                <th className="py-3 px-2 md:px-4 font-medium">
+                  {t("dashboard.activity.table.status")}
+                </th>
+                <th className="py-3 px-2 md:px-4 font-medium">
+                  {t("dashboard.activity.table.duration")}
+                </th>
               </tr>
             </thead>
             <tbody className="text-sm text-foreground">

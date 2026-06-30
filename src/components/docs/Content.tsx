@@ -1,8 +1,8 @@
-import * as Icons from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 import { CopyButton } from "@/components/docs/CopyButton";
+import { Icons } from "@/components/shared/Icons";
 import {
   Accordion,
   AccordionContent,

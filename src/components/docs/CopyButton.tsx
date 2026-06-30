@@ -1,7 +1,7 @@
 "use client";
 
-import { Check, Copy } from "@phosphor-icons/react";
 import { useState } from "react";
+import { Check, Copy } from "@/components/shared/Icons";
 import { Button } from "@/components/ui/button";
 import type { CopyButtonProps } from "@/types";
 

@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import { Content } from "@/components/docs/Content";
 import { Header } from "@/components/docs/Header";
 import { Sidebar } from "@/components/docs/Sidebar";
-import { Tabs } from "@/components/docs/Tabs";
 import { TOC } from "@/components/docs/TOC";
+import { Tabs } from "@/components/shared/Tabs";
 import { extractHeadings, getAllDocs, getDocBySlug } from "@/lib/docs";
 import type { DocsPageProps } from "@/types";
 
