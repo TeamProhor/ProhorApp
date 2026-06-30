@@ -101,3 +101,7 @@ export interface Doc {
   metadata: DocMetadata;
   content: string;
 }
+
+export interface GeneralTabProps extends Readonly<Record<string, never>> {}
+export interface ApiKeysTabProps extends Readonly<Record<string, never>> {}
+export interface BillingTabProps extends Readonly<Record<string, never>> {}

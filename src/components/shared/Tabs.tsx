@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { Sidebar } from "@/components/docs/Sidebar";
-import { List } from "@/components/shared/Icons";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import type { DocsTabsProps } from "@/types";
+import { List } from "@/lib/icons";
+import type { Doc, DocsTabsProps } from "@/types";
 
 export interface TabItem {
   label: string;
@@ -18,16 +18,20 @@ interface GenericTabsProps extends DocsTabsProps {
   items?: TabItem[];
 }
 
+const DEFAULT_SECTIONS: string[] = [];
+const DEFAULT_DOCS: Doc[] = [];
+const DEFAULT_SLUG: string[] = [];
+
 export function Tabs({
-  sections = [],
+  sections = DEFAULT_SECTIONS,
   currentSection = "",
-  docs = [],
-  currentSlug = [],
+  docs = DEFAULT_DOCS,
+  currentSlug = DEFAULT_SLUG,
   items,
 }: Readonly<GenericTabsProps>) {
   if (items) {
     return (
-      <nav className="h-12 border-b border-border flex items-center px-4 md:px-6 overflow-x-auto shrink-0 gap-6 text-sm font-medium text-muted-foreground bg-background sticky top-16 z-40">
+      <nav className="h-12 border-b border-border flex items-center px-4 md:px-6 overflow-x-auto shrink-0 gap-6 text-sm font-medium text-muted-foreground bg-background sticky top-[var(--header-height,3rem)] z-40">
         {items.map((item) => {
           if (item.href) {
             return (
@@ -81,7 +85,7 @@ export function Tabs({
   });
 
   return (
-    <nav className="h-12 border-b border-border flex items-center px-4 md:px-6 overflow-x-auto shrink-0 gap-6 text-sm font-medium text-muted-foreground bg-background sticky top-16 z-40">
+    <nav className="h-12 border-b border-border flex items-center px-4 md:px-6 overflow-x-auto shrink-0 gap-6 text-sm font-medium text-muted-foreground bg-background sticky top-[var(--header-height,3rem)] z-40">
       <div className="lg:hidden pr-2 border-r border-border shrink-0">
         <Sheet>
           <SheetTrigger asChild>

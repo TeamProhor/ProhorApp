@@ -2,15 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  BookOpen,
-  CaretDown,
-  Code,
-  Coins,
-  Gear,
-  Key,
-  SquaresFour,
-} from "@/components/shared/Icons";
+import { useTranslation } from "@/components/shared/LanguageProvider";
 import Logo from "@/components/shared/Logo";
 import {
   Sidebar,
@@ -25,32 +17,44 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  BookOpen,
+  CaretDown,
+  CaretLeft,
+  CaretRight,
+  Code,
+  Coins,
+  Gear,
+  Key,
+  SquaresFour,
+} from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import type { AppSidebarProps } from "@/types";
 
 export function AppSidebar({ ...props }: Readonly<AppSidebarProps>) {
   const pathname = usePathname();
   const isMobile = useIsMobile();
-  const { state } = useSidebar();
+  const { state, toggleSidebar } = useSidebar();
+  const { t } = useTranslation();
 
   const menuItems = [
     {
-      title: "Dashboard",
+      title: t("sidebar.dashboard"),
       url: "/dashboard",
       icon: SquaresFour,
     },
     {
-      title: "Workbench",
+      title: t("sidebar.workbench"),
       url: "#",
       icon: Code,
     },
     {
-      title: "API Keys",
+      title: t("sidebar.apiKeys"),
       url: "/settings",
       icon: Key,
     },
     {
-      title: "Settings",
+      title: t("sidebar.settings"),
       url: "/settings",
       icon: Gear,
     },
@@ -146,13 +150,17 @@ export function AppSidebar({ ...props }: Readonly<AppSidebarProps>) {
               className="hover:bg-card text-muted-foreground hover:text-foreground flex h-9 items-center gap-3 rounded-lg px-3 transition-colors text-sm"
             >
               <BookOpen className="size-5 shrink-0" />
-              <span className="flex-1 font-sans text-sm">Documentation</span>
+              <span className="flex-1 font-sans text-sm">
+                {t("sidebar.documentation")}
+              </span>
             </Link>
 
             <div className="hover:bg-card text-muted-foreground flex h-9 items-center gap-3 rounded-lg px-3 transition-colors text-sm justify-between">
               <div className="flex items-center gap-3">
                 <Coins className="size-5 shrink-0 text-muted-foreground" />
-                <span className="font-sans text-sm">Credits</span>
+                <span className="font-sans text-sm">
+                  {t("sidebar.credits")}
+                </span>
               </div>
               <div className="flex items-center gap-1.5 text-xs tabular-nums text-foreground/80">
                 <span>USD 0.00</span>
@@ -183,20 +191,31 @@ export function AppSidebar({ ...props }: Readonly<AppSidebarProps>) {
                 <CaretDown className="size-4 text-muted-foreground shrink-0" />
               </div>
             </button>
+
+            <button
+              type="button"
+              onClick={toggleSidebar}
+              className="h-9 px-3 flex justify-between items-center gap-3 rounded-lg hover:bg-card transition-colors w-full text-left border-0 bg-transparent text-muted-foreground hover:text-foreground cursor-pointer text-sm font-sans"
+            >
+              <div className="flex items-center gap-3">
+                <CaretLeft className="size-5 shrink-0" />
+                <span>{t("sidebar.collapse")}</span>
+              </div>
+            </button>
           </>
         ) : (
           <div className="flex flex-col items-center gap-2">
             <Link
               href="/docs"
               className="hover:bg-card text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors"
-              title="Documentation"
+              title={t("sidebar.documentation")}
             >
               <BookOpen className="size-5 shrink-0" />
             </Link>
 
             <div
               className="hover:bg-card text-muted-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors"
-              title="Credits"
+              title={t("sidebar.credits")}
             >
               <Coins className="size-5 shrink-0" />
             </div>
@@ -207,6 +226,15 @@ export function AppSidebar({ ...props }: Readonly<AppSidebarProps>) {
               title="FrostFoe (Admin)"
             >
               F
+            </button>
+
+            <button
+              type="button"
+              onClick={toggleSidebar}
+              className="h-9 w-9 flex items-center justify-center rounded-lg hover:bg-card transition-colors border-0 bg-transparent text-muted-foreground hover:text-foreground cursor-pointer"
+              title={t("sidebar.expand")}
+            >
+              <CaretRight className="size-5 shrink-0" />
             </button>
           </div>
         )}

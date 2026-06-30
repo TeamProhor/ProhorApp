@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { Doc, DocsSidebarProps } from "@/types";
 
+const DEFAULT_SLUG: string[] = [];
+const DEFAULT_DOCS: Doc[] = [];
+
 export function Sidebar({
   forceShow = false,
-  currentSlug = [],
-  docs = [],
+  currentSlug = DEFAULT_SLUG,
+  docs = DEFAULT_DOCS,
 }: Readonly<DocsSidebarProps>) {
   const sectionsMap = new Map<string, Doc[]>();
   for (const doc of docs) {

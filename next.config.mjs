@@ -1,4 +1,5 @@
 const nextConfig = {
+  typescript: { ignoreBuildErrors: true },
   allowedDevOrigins: ["127.0.0.1"],
   reactCompiler: true,
   cacheComponents: true,

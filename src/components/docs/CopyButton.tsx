@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy } from "@/components/shared/Icons";
 import { Button } from "@/components/ui/button";
+import { Check, Copy } from "@/lib/icons";
 import type { CopyButtonProps } from "@/types";
 
 export function CopyButton({ text }: Readonly<CopyButtonProps>) {

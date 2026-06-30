@@ -3,28 +3,27 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { CaretRight, MagnifyingGlass } from "@/components/shared/Icons";
+import { useSyncExternalStore } from "react";
 import { useTranslation } from "@/components/shared/LanguageProvider";
 import Logo from "@/components/shared/Logo";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Kbd } from "@/components/ui/kbd";
+import { CaretRight, MagnifyingGlass } from "@/lib/icons";
 import type { DocsHeaderProps } from "@/types";
 
 export function Header(_props: Readonly<DocsHeaderProps>) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const pathname = usePathname();
   const router = useRouter();
   const { locale } = useTranslation();
-
   const isBengali = locale === "bn";
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   function toggleLanguage() {
     let newPath = pathname;

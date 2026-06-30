@@ -96,9 +96,46 @@
       "billing": "Billing & Limits"
     },
     "general": {
-      "workspaceName": "Workspace Name",
-      "workspaceId": "Workspace ID",
-      "saveChanges": "Save Changes"
+      "profile": "Profile",
+      "avatar": "Avatar",
+      "fullName": "Full name",
+      "callYou": "What should Prohor call you?",
+      "describeWork": "What best describes your work?",
+      "instructions": "Instructions for Prohor",
+      "instructionsDesc": "Prohor will keep these in mind across chats and Cowork.",
+      "preferences": "Preferences",
+      "appearance": "Appearance",
+      "chatFont": "Chat font",
+      "motion": "Motion",
+      "motionDesc": "Reduce animation in streaming responses and other interface elements.",
+      "voice": "Voice",
+      "language": "Language",
+      "style": "Style",
+      "speed": "Speed",
+      "notifications": "Notifications",
+      "responseCompletions": "Response completions",
+      "responseCompletionsDesc": "Get notified when Prohor has finished a response. Useful for long-running tasks.",
+      "dispatchMessages": "Dispatch messages",
+      "dispatchMessagesDesc": "Get a push notification on your phone when Prohor messages you in Dispatch.",
+      "workDeveloper": "Developer",
+      "workDesigner": "Designer",
+      "workManager": "Manager",
+      "workOther": "Other",
+      "workPlaceholder": "Select work description",
+      "fontSerif": "Anthropic Serif",
+      "fontSans": "System Sans",
+      "fontMono": "System Mono",
+      "fontPlaceholder": "Select font",
+      "voiceLangEn": "English",
+      "voiceLangBn": "Bengali",
+      "voiceStyleButtery": "Buttery",
+      "voiceStyleWarm": "Warm",
+      "voiceStyleNeutral": "Neutral",
+      "voiceStylePlaceholder": "Select voice style",
+      "voiceSpeedSlow": "Slow",
+      "voiceSpeedNormal": "Normal",
+      "voiceSpeedFast": "Fast",
+      "voiceSpeedPlaceholder": "Select speed"
     },
     "apiKeys": {
       "createKey": "Create API Key",
@@ -112,37 +149,90 @@
       "nameLabel": "Key Name",
       "placeholder": "e.g., Development Key",
       "cancel": "Cancel",
-      "create": "Create Key"
+      "create": "Create Key",
+      "title": "API keys",
+      "desc": "API keys are owned by workspaces and remain active even after the creator is removed",
+      "createBtn": "Create key",
+      "planTitle": "Your plan",
+      "planBadge": "Evaluation access",
+      "planDesc": "This free plan is for evaluating Prohor's capabilities before commercial use.",
+      "learnMore": "Learn more",
+      "tableKey": "Key",
+      "tableWorkspace": "Workspace",
+      "tableCreatedBy": "Created by",
+      "tableCreatedAt": "Created at",
+      "tableLastUsed": "Last used at",
+      "tableCost": "Cost",
+      "tableActions": "Actions",
+      "revoked": "Revoked"
     },
     "billing": {
       "monthlyBudget": "Monthly Budget Limit (USD)",
       "spendAlert": "Spend Warning Threshold (%)",
-      "saveLimits": "Save Limits"
+      "saveLimits": "Save Limits",
+      "emailAlertsLabel": "Enable email warnings on hitting budget limits"
     }
   },
   "upgrade": {
     "title": "Plans that grow with you",
     "individual": "Individual",
     "team": "Team and Enterprise",
+    "monthlyToggle": "Monthly",
+    "yearlyToggle": "Yearly",
+    "teamTitle": "Team & Enterprise Plans Coming Soon",
+    "teamDesc": "For custom enterprise integrations, volume discounts, or custom team deployments, please reach out to our team at sales@prohor.com.",
+    "teamBtn": "Contact Sales",
     "free": {
       "title": "Free",
       "desc": "Meet Prohor",
       "price": "$0",
-      "button": "Use Prohor for free"
+      "button": "Use Prohor for free",
+      "features": [
+        "Chat on web, iOS, Android, and desktop",
+        "Generate code and visualize data",
+        "Connect Slack and Google Workspace",
+        "Extended thinking for complex work",
+        "Built-in web search"
+      ]
     },
     "pro": {
       "title": "Pro",
       "desc": "Research, code, and organize",
       "price": "$17",
       "period": "USD / month billed annually",
-      "button": "Get Pro plan"
+      "button": "Get Pro plan",
+      "features": [
+        "Prohor Code directly in your codebase",
+        "Power through tasks with Cowork",
+        "Build and prototype with Prohor Design",
+        "Higher usage limits",
+        "Access to more AI models",
+        "Memory that carries across conversations"
+      ]
     },
     "max": {
       "title": "Max",
       "desc": "Higher limits, priority access",
       "price": "From $100",
       "period": "USD / month billed monthly",
-      "button": "Get Max plan"
+      "button": "Get Max plan",
+      "features": [
+        "Up to 20x more usage than Pro*",
+        "Recommended for Prohor Code & Cowork",
+        "Early access to advanced Prohor features",
+        "Higher output limits for all tasks",
+        "Priority access at high traffic times"
+      ]
     }
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "workbench": "Workbench",
+    "apiKeys": "API Keys",
+    "settings": "Settings",
+    "documentation": "Documentation",
+    "credits": "Credits",
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar"
   }
 }

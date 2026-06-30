@@ -1,10 +1,14 @@
 import Link from "next/link";
-import { ListDashes } from "@/components/shared/Icons";
 import { getDictionary, type Locale } from "@/lib/i18n";
-import type { DocsTOCProps } from "@/types";
+import { ListDashes } from "@/lib/icons";
+import type { DocsTOCProps, TOCItem } from "@/types";
 
-export function TOC({ headings = [], locale = "en" }: Readonly<DocsTOCProps>) {
-  if (headings.length === 0) {
+const DEFAULT_HEADINGS: TOCItem[] = [];
+
+export function TOC({ headings, locale = "en" }: Readonly<DocsTOCProps>) {
+  const resolvedHeadings = headings ?? DEFAULT_HEADINGS;
+
+  if (resolvedHeadings.length === 0) {
     return null;
   }
 
@@ -16,7 +20,7 @@ export function TOC({ headings = [], locale = "en" }: Readonly<DocsTOCProps>) {
         <ListDashes size={14} /> {dict.docs.onThisPage}
       </h4>
       <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
-        {headings.map((item) => (
+        {resolvedHeadings.map((item) => (
           <li key={item.id}>
             <Link
               href={`#${item.id}`}

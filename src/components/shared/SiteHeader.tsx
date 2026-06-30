@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTranslation } from "@/components/shared/LanguageProvider";
 import Logo from "@/components/shared/Logo";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -13,16 +13,16 @@ import type { SiteHeaderProps } from "@/types";
 
 export function SiteHeader(_props: Readonly<SiteHeaderProps>) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const pathname = usePathname();
   const router = useRouter();
   const { locale } = useTranslation();
 
   const isBengali = locale === "bn";
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   function toggleLanguage() {
     let newPath = pathname;

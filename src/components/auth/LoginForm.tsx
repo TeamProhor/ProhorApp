@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslation } from "@/components/shared/LanguageProvider";
 import Logo from "@/components/shared/Logo";
 import { Button } from "@/components/ui/button";
@@ -24,12 +25,12 @@ export default function LoginForm(_props: Readonly<LoginFormProps>) {
               </h1>
               <p className="text-pretty text-muted-foreground text-sm font-sans">
                 {t("auth.newHere")}{" "}
-                <a
+                <Link
                   href="/#"
                   className="text-primary hover:underline font-medium"
                 >
                   {t("auth.signUpFree")}
-                </a>
+                </Link>
               </p>
             </div>
 
@@ -73,13 +74,13 @@ export default function LoginForm(_props: Readonly<LoginFormProps>) {
 
             <p className="text-pretty text-center text-xs w-11/12 text-muted-foreground font-sans">
               {t("auth.termsNoticeStart")}{" "}
-              <a href="/#" className="underline hover:text-foreground">
+              <Link href="/#" className="underline hover:text-foreground">
                 {t("auth.termsLink")}
-              </a>{" "}
+              </Link>{" "}
               {t("auth.termsNoticeMid")}{" "}
-              <a href="/#" className="underline hover:text-foreground">
+              <Link href="/#" className="underline hover:text-foreground">
                 {t("auth.privacyLink")}
-              </a>{" "}
+              </Link>{" "}
               {t("auth.termsNoticeEnd")}
             </p>
           </div>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 import { CopyButton } from "@/components/docs/CopyButton";
-import { Icons } from "@/components/shared/Icons";
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { Icons } from "@/lib/icons";
 import type { DocsContentProps } from "@/types";
 import { Breadcrumb } from "./Breadcrumb";
 
@@ -38,11 +38,13 @@ const mdxComponents = {
   AccordionTrigger,
   AccordionContent,
   Separator,
-  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className="text-4xl md:text-5xl font-serif text-foreground mb-6"
       {...props}
-    />
+    >
+      {children}
+    </h1>
   ),
   h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
     const id = getSlugId(children);

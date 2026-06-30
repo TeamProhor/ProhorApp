@@ -66,12 +66,16 @@ export default async function DocsSlugPage({
     inLanguage: locale,
     articleBody: doc.content,
   };
+  const jsonLdString = JSON.stringify(jsonLd)
+    .replaceAll("<", "\\u003c")
+    .replaceAll(">", "\\u003e")
+    .replaceAll("&", "\\u0026");
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString }}
       />
       <Header />
       <Tabs

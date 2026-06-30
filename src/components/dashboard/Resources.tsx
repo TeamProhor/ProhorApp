@@ -6,10 +6,10 @@ import {
   Queue,
   ShieldCheck,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 import { useTranslation } from "@/components/shared/LanguageProvider";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-
 import type { ResourcesProps } from "@/types";
 
 export function Resources(_props: Readonly<ResourcesProps>) {
@@ -28,18 +28,21 @@ export function Resources(_props: Readonly<ResourcesProps>) {
       title: t("dashboard.resources.fastMode.title"),
       description: t("dashboard.resources.fastMode.description"),
       icon: FastForward,
+      badge: undefined,
     },
     {
-      id: "batch",
+      id: "batches",
       title: t("dashboard.resources.batch.title"),
       description: t("dashboard.resources.batch.description"),
       icon: Queue,
+      badge: undefined,
     },
     {
       id: "caching",
       title: t("dashboard.resources.caching.title"),
       description: t("dashboard.resources.caching.description"),
       icon: Database,
+      badge: undefined,
     },
   ];
 
@@ -52,7 +55,7 @@ export function Resources(_props: Readonly<ResourcesProps>) {
         {resources.map((res) => {
           const Icon = res.icon;
           return (
-            <a
+            <Link
               key={res.id}
               href="/docs"
               target="_blank"
@@ -75,7 +78,7 @@ export function Resources(_props: Readonly<ResourcesProps>) {
                   {res.description}
                 </p>
               </Card>
-            </a>
+            </Link>
           );
         })}
       </div>
