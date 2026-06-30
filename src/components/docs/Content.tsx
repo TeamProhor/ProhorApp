@@ -1,25 +1,73 @@
+import * as Icons from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 import { CopyButton } from "@/components/docs/CopyButton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
+import { getDictionary, type Locale } from "@/lib/i18n";
 import type { DocsContentProps } from "@/types";
+import { Breadcrumb } from "./Breadcrumb";
+
+function getSlugId(children: React.ReactNode): string {
+  const text = React.Children.toArray(children)
+    .map((child) => {
+      if (typeof child === "string" || typeof child === "number") {
+        return child;
+      }
+      return "";
+    })
+    .join("");
+
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[\s\t\n]+/g, "-")
+    .replace(/[.,/#!$%^&*;:{}=_`~()?"'<>]/g, "");
+}
 
 const mdxComponents = {
+  ...Icons,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  Separator,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className="text-4xl md:text-5xl font-serif text-foreground mb-6"
       {...props}
     />
   ),
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2
-      className="text-2xl md:text-3xl font-serif text-foreground border-b border-border pb-2 mt-10 mb-6"
-      {...props}
-    />
-  ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="text-xl font-serif text-foreground mt-8 mb-4" {...props} />
-  ),
+  h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const id = getSlugId(children);
+    return (
+      <h2
+        id={id}
+        className="text-2xl md:text-3xl font-serif text-foreground border-b border-border pb-2 mt-10 mb-6 scroll-mt-20 flex items-center gap-2"
+        {...props}
+      >
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const id = getSlugId(children);
+    return (
+      <h3
+        id={id}
+        className="text-xl font-serif text-foreground mt-8 mb-4 scroll-mt-20 flex items-center gap-2"
+        {...props}
+      >
+        {children}
+      </h3>
+    );
+  },
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
       className="text-muted-foreground leading-relaxed text-base mb-6"
@@ -73,13 +121,17 @@ const mdxComponents = {
   },
 };
 
-export function Content({ doc }: Readonly<DocsContentProps>) {
+export function Content({ doc, locale }: Readonly<DocsContentProps>) {
+  const dict = getDictionary(locale as Locale);
+
   return (
     <main className="flex-grow overflow-y-auto p-6 md:p-10 lg:p-12 scroll-smooth bg-background">
       <div className="max-w-3xl mx-auto">
-        <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-          {doc.metadata.section || "Documentation"}
-        </div>
+        <Breadcrumb
+          docsLabel={dict.nav.docs}
+          section={doc.metadata.section || "General"}
+          title={doc.metadata.title}
+        />
 
         <div className="flex justify-between items-start mb-6">
           <h1 className="text-4xl md:text-5xl font-serif text-foreground">
@@ -94,7 +146,8 @@ export function Content({ doc }: Readonly<DocsContentProps>) {
         )}
 
         <div className="prose prose-stone dark:prose-invert max-w-none">
-          <MDXRemote source={doc.content} components={mdxComponents} />
+          {/* biome-ignore lint/suspicious/noExplicitAny: map icon properties dynamically */}
+          <MDXRemote source={doc.content} components={mdxComponents as any} />
         </div>
       </div>
     </main>

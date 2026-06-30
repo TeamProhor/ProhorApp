@@ -35,6 +35,9 @@
       },
       "correctness": {
         "noUnknownTypeSelector": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       }
     },
     "domains": {

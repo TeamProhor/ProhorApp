@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "docs": "Docs",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "docs": {
+    "search": "Search docs...",
+    "feedback": "Was this page helpful?",
+    "onThisPage": "On this page"
+  },
+  "dashboard": {
+    "greeting": "Good morning",
+    "exploreDocs": "Explore docs",
+    "getApiKey": "Get API key",
+    "buildAgent": "Build an agent"
+  },
+  "auth": {
+    "signIn": "Sign in to your account",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "button": "Return Home"
+  }
+}

@@ -1,0 +1,24 @@
+---
+title: Configuration & Secrets
+description: Manage environment variables and secrets on Prohor Cloud.
+section: Prohor Cloud
+order: 3
+---
+
+Store application configuration variables and API keys securely in Prohor Cloud's encrypted credential vaults.
+
+## Setting Secrets
+
+Set environment variables securely using the CLI:
+
+```bash
+prohor env set API_SECRET_KEY=12345
+```
+
+These values are encrypted at rest and injected directly into your application containers.
+
+## Default Variables
+
+Our cloud system injects the following variables automatically:
+- `PORT`: Server binding port (default: `3000`).
+- `NODE_ENV`: Set to `production` in live container environments.

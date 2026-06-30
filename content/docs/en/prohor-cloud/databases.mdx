@@ -1,0 +1,23 @@
+---
+title: Managed Databases
+description: Provision and scale managed PostgreSQL databases on Prohor Cloud.
+section: Prohor Cloud
+order: 2
+---
+
+Prohor Cloud offers fully managed **DBaaS (Database-as-a-Service)** featuring PostgreSQL engines. We handle replication, automatic daily backups, and connection pooling.
+
+## Provisioning a Database
+
+To spin up a new managed database using the Prohor CLI:
+
+```bash
+prohor db create postgres startup-db
+```
+
+Your database connection parameters will be securely generated and outputted.
+
+## Security & Backups
+
+- **Secure Encrypted Connections**: SSL mode is required for all database queries.
+- **Daily Automated Backups**: Retain snapshots of your database securely in separate geographic storage vaults.

@@ -2,15 +2,17 @@
 
 import { BookOpen, Key, Sparkle } from "@phosphor-icons/react";
 import Link from "next/link";
+import { useTranslation } from "@/components/shared/LanguageProvider";
 import { Button } from "@/components/ui/button";
-
 import type { HeaderProps } from "@/types";
 
 export function Header(_props: Readonly<HeaderProps>) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 w-full">
       <h1 className="font-serif text-2xl md:text-3xl font-normal tracking-tight text-foreground">
-        Good morning, FrostFoe
+        {t("dashboard.greeting")}, FrostFoe
       </h1>
       <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-3 w-full md:w-auto">
         <Button
@@ -21,7 +23,7 @@ export function Header(_props: Readonly<HeaderProps>) {
         >
           <Link href="/docs" className="justify-center">
             <BookOpen className="size-5" />
-            <span>Explore docs</span>
+            <span>{t("dashboard.exploreDocs")}</span>
           </Link>
         </Button>
         <Button
@@ -30,7 +32,7 @@ export function Header(_props: Readonly<HeaderProps>) {
           className="w-full sm:w-auto h-10! border-border bg-card hover:bg-muted text-foreground transition-all duration-200 justify-center"
         >
           <Key className="size-5" />
-          <span>Get API key</span>
+          <span>{t("dashboard.getApiKey")}</span>
         </Button>
         <Button
           size="lg"
@@ -42,7 +44,7 @@ export function Header(_props: Readonly<HeaderProps>) {
             className="justify-center"
           >
             <Sparkle className="size-5" />
-            <span>Build an agent</span>
+            <span>{t("dashboard.buildAgent")}</span>
           </Link>
         </Button>
       </div>

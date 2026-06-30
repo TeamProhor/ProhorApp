@@ -1,6 +1,8 @@
 import type { SVGProps } from "react";
 
-export interface LogoProps extends Readonly<SVGProps<SVGSVGElement>> {}
+export interface LogoProps extends Readonly<SVGProps<SVGSVGElement>> {
+  animated?: boolean;
+}
 
 export interface LoginFormProps extends Readonly<Record<string, never>> {}
 
@@ -18,7 +20,10 @@ export interface MainLayoutProps
 
 export interface SiteHeaderProps extends Readonly<Record<string, never>> {}
 
-export interface HeaderProps extends Readonly<Record<string, never>> {}
+export interface HeaderProps
+  extends Readonly<{
+    locale?: string;
+  }> {}
 
 export interface CardsProps extends Readonly<Record<string, never>> {}
 
@@ -35,7 +40,17 @@ export interface DocsSidebarProps
     docs?: Doc[];
   }> {}
 
-export interface DocsTOCProps extends Readonly<Record<string, never>> {}
+export interface TOCItem {
+  id: string;
+  label: string;
+  level: number;
+}
+
+export interface DocsTOCProps
+  extends Readonly<{
+    headings?: TOCItem[];
+    locale?: string;
+  }> {}
 
 export interface DocsTabsProps
   extends Readonly<{
@@ -48,6 +63,7 @@ export interface DocsTabsProps
 export interface DocsContentProps
   extends Readonly<{
     doc: Doc;
+    locale: string;
   }> {}
 
 export interface CopyButtonProps
@@ -63,8 +79,14 @@ export interface DocsLayoutProps
 export interface DocsPageProps
   extends Readonly<{
     params: Promise<{
+      locale: string;
       slug: string[];
     }>;
+  }> {}
+
+export interface LanguageProviderProps
+  extends Readonly<{
+    children: React.ReactNode;
   }> {}
 
 export interface DocMetadata {
