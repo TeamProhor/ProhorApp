@@ -7,6 +7,7 @@ import type { MainLayoutProps } from "@/types";
 export default function MainLayout({ children }: Readonly<MainLayoutProps>) {
   return (
     <SidebarProvider
+      suppressHydrationWarning
       style={
         {
           "--sidebar-width": "calc(var(--spacing) * 72)",

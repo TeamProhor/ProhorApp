@@ -5,6 +5,7 @@ import {
   Inter,
   JetBrains_Mono,
 } from "next/font/google";
+import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
@@ -47,12 +48,19 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${hindSiliguri.variable} ${cormorantGaramond.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <TooltipProvider>
-        <body className="min-h-full flex flex-col">
-          {children}
-          <Toaster />
-        </body>
-      </TooltipProvider>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>
+            {children}
+            <Toaster />
+          </TooltipProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -23,6 +23,7 @@
   },
   "registries": {
     "@supabase": "https://supabase.com/ui/r/{name}.json",
-    "@blocks-so": "https://blocks.so/r/{name}.json"
+    "@blocks-so": "https://blocks.so/r/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}"
   }
 }

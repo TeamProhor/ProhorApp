@@ -13,8 +13,7 @@ export default function NotFound() {
             পৃষ্ঠাটি পাওয়া যায়নি
           </h1>
           <p className="text-pretty text-muted-foreground text-sm font-sans">
-            আপনি যে পৃষ্ঠাটি খুঁজছেন তা হয়তো সরানো হয়েছে বা এটি এখন আর উপলব্ধ
-            নেই।
+            আপনি যে পৃষ্ঠাটি খুঁজছেন তা হয়তো সরানো হয়েছে বা এটি এখন আর উপলব্ধ নেই।
           </p>
         </div>
 

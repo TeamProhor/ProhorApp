@@ -32,6 +32,9 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
+      },
+      "correctness": {
+        "noUnknownTypeSelector": "off"
       }
     },
     "domains": {

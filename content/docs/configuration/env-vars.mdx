@@ -1,0 +1,25 @@
+---
+title: Environment Variables
+description: Manage configuration and secret variables for your environment.
+section: Configuration
+order: 1
+---
+
+Configure application settings securely using environment variables. Secret values are encrypted at rest.
+
+## Adding Variables
+
+You can set variables using the CLI:
+
+```bash
+prohor env set KEY=VALUE
+```
+
+Or configure them inside the Settings tab of your application in the Web Dashboard.
+
+## Built-in Variables
+
+ProhorCloud injects the following variables automatically:
+- `PORT`: The internal port your application should bind to (default: `3000`).
+- `NODE_ENV`: Set to `production` in live environments.
+- `DATABASE_URL`: Connection string if a database is linked.

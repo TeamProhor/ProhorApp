@@ -144,3 +144,9 @@
     fill: oklch(0.16 0.005 70);
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

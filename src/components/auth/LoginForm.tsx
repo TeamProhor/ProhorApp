@@ -29,11 +29,7 @@ export default function LoginForm(_props: Readonly<LoginFormProps>) {
             </div>
 
             <div className="w-full flex flex-col gap-4">
-              <Input
-                type="email"
-                placeholder="আপনার ইমেইল"
-                className="w-full"
-              />
+              <Input type="email" placeholder="আপনার ইমেইল" className="w-full" />
               <div className="flex flex-col gap-2">
                 <Button
                   className="w-full text-primary-foreground bg-primary hover:bg-primary/95"

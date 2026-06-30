@@ -6,7 +6,10 @@ export interface AuthLayoutProps {
 
 export default function AuthLayout({ children }: Readonly<AuthLayoutProps>) {
   return (
-    <div className="min-h-dvh bg-background flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div
+      className="min-h-dvh bg-background flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+      suppressHydrationWarning
+    >
       {children}
     </div>
   );
