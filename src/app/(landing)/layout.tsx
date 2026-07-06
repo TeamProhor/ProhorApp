@@ -7,7 +7,7 @@ export default function LandingLayout({
   children: ReactNode;
 }>): ReactElement {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background">
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD payload is safe
