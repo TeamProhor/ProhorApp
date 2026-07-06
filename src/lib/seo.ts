@@ -2,21 +2,30 @@ import type { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL("https://prohor-nextjs-starter-kit.vercel.app"),
-  title: "প্রহর (Prohor) - Next.js Starter Kit with Supabase & Tailwind CSS",
-  description:
-    "একটি দ্রুত, আধুনিক এবং নির্ভরযোগ্য Next.js স্টার্টার কিট যা Supabase, Tailwind CSS এবং Biome-এর সাথে সম্পূর্ণরূপে সজ্জিত।",
+  title: "Prohor Next.js & Supabase Starter Kit",
+  description: "Modern Next.js & Supabase starter kit with Tailwind by Prohor.",
   keywords: [
-    "Next.js",
-    "Supabase",
-    "Tailwind CSS",
-    "Starter Kit",
-    "Bangla Developer Template",
-    "Prohor",
-    "প্রহর",
+    "Next.js starter",
+    "Supabase template",
+    "Tailwind CSS boilerplate",
+    "Prohor Starter Kit",
+    "React framework",
+    "AI friendly Next.js",
   ],
-  authors: [{ name: "Prohor Team" }],
+  authors: [{ name: "Prohor Team", url: "https://github.com/TeamProhor" }],
+  creator: "Prohor Team",
+  publisher: "Prohor Team",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/en",
+      "bn-BD": "/bn",
+    },
   },
   robots: {
     index: true,
@@ -32,26 +41,30 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "প্রহর (Prohor) - Next.js Starter Kit",
+    title: "Prohor Next.js Starter Kit",
     description:
-      "একটি দ্রুত, আধুনিক এবং নির্ভরযোগ্য Next.js স্টার্টার কিট যা Supabase, Tailwind CSS এবং Biome-এর সাথে সম্পূর্ণরূপে সজ্জিত।",
+      "Modern Next.js & Supabase starter kit with Tailwind by Prohor.",
     type: "website",
+    siteName: "Prohor",
     locale: "bn_BD",
+    alternateLocale: ["en_US"],
     url: "https://prohor-nextjs-starter-kit.vercel.app/",
     images: [
       {
         url: "https://prohor-nextjs-starter-kit.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Prohor Next.js Starter Kit",
+        alt: "Prohor Next.js Starter Kit with Supabase & Tailwind CSS",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "প্রহর (Prohor) - Next.js Starter Kit",
+    title: "Prohor Next.js Starter Kit - Build Faster Apps Today",
     description:
-      "একটি দ্রুত, আধুনিক এবং নির্ভরযোগ্য Next.js স্টার্টার কিট যা Supabase, Tailwind CSS এবং Biome-এর সাথে সম্পূর্ণরূপে সজ্জিত।",
+      "Launch your next web project faster with Prohor Next.js Starter Kit. Featuring Supabase integration, modern Tailwind CSS styling, strict Biome linting, and seamless developer experience built-in.",
+    site: "@TeamProhor",
+    creator: "@TeamProhor",
     images: ["https://prohor-nextjs-starter-kit.vercel.app/og-image.png"],
   },
 };
@@ -64,33 +77,21 @@ export const siteJsonLd = {
       "@id": "https://prohor-nextjs-starter-kit.vercel.app/#website",
       url: "https://prohor-nextjs-starter-kit.vercel.app/",
       name: "Prohor Next.js Starter Kit",
-      description: "একটি দ্রুত, আধুনিক এবং নির্ভরযোগ্য Next.js স্টার্টার কিট যা Supabase, Tailwind CSS এবং Biome-এর সাথে সম্পূর্ণরূপে সজ্জিত।",
-      inLanguage: "bn-BD",
+      description:
+        "Modern Next.js & Supabase starter kit with Tailwind by Prohor.",
+      inLanguage: ["en-US", "bn-BD"],
     },
     {
       "@type": "Organization",
       "@id": "https://prohor-nextjs-starter-kit.vercel.app/#organization",
       name: "Prohor Team",
       url: "https://prohor-nextjs-starter-kit.vercel.app/",
-      sameAs: [
-        "https://github.com/TeamProhor"
-      ],
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "123 Tech Street",
-        addressLocality: "Dhaka",
-        addressCountry: "BD"
+      sameAs: ["https://github.com/TeamProhor"],
+      logo: "https://prohor-nextjs-starter-kit.vercel.app/icon.svg",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
       },
-      knowsAbout: ["Next.js", "Web Development", "React"]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://prohor-nextjs-starter-kit.vercel.app/#person",
-      name: "Prohor Developer",
-      url: "https://prohor-nextjs-starter-kit.vercel.app/",
-      sameAs: [
-        "https://github.com/TeamProhor"
-      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -98,14 +99,14 @@ export const siteJsonLd = {
       operatingSystem: "All",
       applicationCategory: "DeveloperApplication",
       description:
-        "একটি দ্রুত, আধুনিক এবং নির্ভরযোগ্য Next.js স্টার্টার কিট যা Supabase, Tailwind CSS এবং Biome-এর সাথে সম্পূর্ণরূপে সজ্জিত।",
+        "A fast, modern, and reliable Next.js starter kit fully equipped with Supabase, Tailwind CSS, and Biome.",
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
       },
-    }
-  ]
+    },
+  ],
 };
 
 export const siteFaqJsonLd = {
@@ -114,18 +115,18 @@ export const siteFaqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "প্রহর (Prohor) স্টার্টার কিট কী?",
+      name: "What is the Prohor Next.js Starter Kit?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "প্রহর হলো একটি আধুনিক এবং দ্রুতগতির Next.js স্টার্টার কিট যা Supabase ডাটাবেজ, Tailwind CSS স্টাইলিং, Biome লিন্টিং এবং GSAP এনিমেশন ফ্রেমওয়ার্কের সাথে সম্পূর্ণরূপে সজ্জিত।",
+        text: "Prohor is a modern and fast Next.js starter kit fully equipped with Supabase database, Tailwind CSS styling, Biome linting, and GSAP animation framework.",
       },
     },
     {
       "@type": "Question",
-      name: "এটি দিয়ে কীভাবে কাজ শুরু করব?",
+      name: "How do I get started with Prohor Starter Kit?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "প্রজেক্টটি ক্লোন করে সরাসরি 'bun install' এবং 'bun run dev' কমান্ড চালুর মাধ্যমে ডেভেলপমেন্ট শুরু করা যাবে।",
+        text: "You can start development immediately by cloning the project and running 'bun install' followed by 'bun run dev'.",
       },
     },
   ],

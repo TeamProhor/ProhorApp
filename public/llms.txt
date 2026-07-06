@@ -3,5 +3,10 @@
 Prohor is a modern, reliable Next.js starter kit equipped with Supabase, Tailwind CSS, and Biome.
 Developed by the Prohor Team, a group of dedicated developers.
 
-## Content
-- Home: https://prohor-nextjs-starter-kit.vercel.app/
+## Content (English)
+- Home: https://prohor-nextjs-starter-kit.vercel.app/en
+- Login: https://prohor-nextjs-starter-kit.vercel.app/en/login
+
+## Content (Bengali)
+- হোম (Home): https://prohor-nextjs-starter-kit.vercel.app/bn
+- লগইন (Login): https://prohor-nextjs-starter-kit.vercel.app/bn/login

@@ -33,4 +33,21 @@ export interface ThemeTogglerProps extends ComponentPropsWithoutRef<"button"> {
   readonly onThemeChange?: (theme: "light" | "dark") => void;
 }
 
-export type LoginFormProps = Record<string, never>;
+export interface LoginFormProps {
+  readonly dict: {
+    login: {
+      title: string;
+      newHere: string;
+      signUpFree: string;
+      sendMagicLink: string;
+      usePassword: string;
+      or: string;
+      sso: string;
+      termsText1: string;
+      termsLink: string;
+      and: string;
+      privacyLink: string;
+      termsText2: string;
+    };
+  };
+}

@@ -9,9 +9,9 @@ import { Separator } from "@/components/ui/separator";
 import { ProhorIcon } from "@/lib/icons";
 import type { LoginFormProps } from "@/types";
 
-export default function LoginForm(
-  _props: Readonly<LoginFormProps>,
-): ReactElement {
+export default function LoginForm({
+  dict,
+}: Readonly<LoginFormProps>): ReactElement {
   return (
     <div className="flex items-center justify-center min-h-dvh bg-background">
       <Card className="w-full max-w-sm rounded-xl px-6 py-10 border bg-card text-card-foreground">
@@ -21,15 +21,15 @@ export default function LoginForm(
 
             <div className="flex flex-col gap-2 text-center">
               <h1 className="text-balance text-3xl font-normal tracking-tight font-serif text-foreground">
-                আবার স্বাগতম
+                {dict.login.title}
               </h1>
               <p className="text-pretty text-muted-foreground text-sm font-sans">
-                এখানে নতুন?{" "}
+                {dict.login.newHere}{" "}
                 <Link
                   href="/#"
                   className="text-primary hover:underline font-medium"
                 >
-                  বিনামূল্যে সাইন আপ করুন
+                  {dict.login.signUpFree}
                 </Link>
               </p>
             </div>
@@ -42,37 +42,39 @@ export default function LoginForm(
               />
               <div className="flex flex-col gap-2">
                 <Button className="w-full" size="lg">
-                  ম্যাজিক লিংক পাঠান
+                  {dict.login.sendMagicLink}
                 </Button>
                 <Button
                   variant="link"
                   className="w-full text-sm text-muted-foreground hover:text-foreground"
                 >
-                  পাসওয়ার্ড ব্যবহার করুন
+                  {dict.login.usePassword}
                 </Button>
               </div>
 
               <div className="flex items-center gap-4 py-2">
                 <Separator className="flex-1 bg-border" />
-                <span className="text-xs text-muted-foreground">অথবা</span>
+                <span className="text-xs text-muted-foreground">
+                  {dict.login.or}
+                </span>
                 <Separator className="flex-1 bg-border" />
               </div>
 
               <Button variant="outline" className="w-full" size="lg">
-                এসএসও (SSO) দিয়ে লগইন করুন
+                {dict.login.sso}
               </Button>
             </div>
 
             <p className="text-pretty text-center text-xs w-11/12 text-muted-foreground font-sans">
-              চালিয়ে যাওয়ার মাধ্যমে, আপনি আমাদের{" "}
+              {dict.login.termsText1}{" "}
               <Link href="/#" className="underline hover:text-foreground">
-                সেবার শর্তাবলী
+                {dict.login.termsLink}
               </Link>{" "}
-              এবং{" "}
+              {dict.login.and}{" "}
               <Link href="/#" className="underline hover:text-foreground">
-                গোপনীয়তা নীতি
-              </Link>{" "}
-              এর সাথে সম্মত হচ্ছেন।
+                {dict.login.privacyLink}
+              </Link>
+              {dict.login.termsText2}
             </p>
           </div>
         </CardContent>
