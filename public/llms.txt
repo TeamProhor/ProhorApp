@@ -1,0 +1,24 @@
+# Prohor Next.js Starter Kit
+
+A high-performance, developer-ready Next.js starter kit pre-configured with Supabase auth/database, Tailwind CSS styling, Biome formatting, and GSAP motion frameworks.
+
+## Project Structure
+
+- `/src/app`: App Router routes.
+  - `(landing)/`: Landing/marketing routes.
+  - `(auth)/`: Authentication routes (login, etc.).
+- `/src/components`: React components.
+  - `ui/`: Standard shadcn UI primitives.
+  - `shared/`: Shared components (Theme Provider, Toggler, etc.).
+  - `auth/`: Login/signup component pages.
+- `/src/lib`: core utility libraries (supabase client, icons config, seo details).
+- `/src/types`: type definitions centralized in `index.ts`.
+
+## Tech Stack & Conventions
+
+- **Framework**: Next.js 15+ (App Router, React Server Components)
+- **Database / Auth**: Supabase SSR client integration
+- **Styling**: Tailwind CSS
+- **Code Standards**: Biome (formatting & linting, TypeScript strict mode)
+- **Animations**: GSAP
+- **Package Manager**: Bun (`bun` and `bunx` exclusively)

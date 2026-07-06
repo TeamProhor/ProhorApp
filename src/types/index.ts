@@ -32,3 +32,5 @@ export interface ThemeTogglerProps extends ComponentPropsWithoutRef<"button"> {
   /** Called on toggle. Pair with `theme` for controlled usage. */
   readonly onThemeChange?: (theme: "light" | "dark") => void;
 }
+
+export type LoginFormProps = Record<string, never>;
