@@ -96,19 +96,17 @@ export default async function RootLayout({
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD payload is safe
+          dangerouslySetInnerHTML={{
+            __html: jsonLdString,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
-          <TooltipProvider>
-            <script
-              type="application/ld+json"
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD payload is safe
-              dangerouslySetInnerHTML={{
-                __html: jsonLdString,
-              }}
-            />
-            {children}
-          </TooltipProvider>
+          <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactElement } from "react";
+import { LanguageToggler } from "@/components/language-toggler";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
@@ -33,7 +34,10 @@ export default async function Home({
             </li>
           </ul>
         </nav>
-        <ThemeToggler variant="circle" />
+        <div className="flex items-center gap-4">
+          <LanguageToggler />
+          <ThemeToggler variant="circle" />
+        </div>
       </header>
 
       <section className="flex-grow flex flex-col items-center justify-center px-6 mt-20 pt-10">

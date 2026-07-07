@@ -25,7 +25,7 @@ const nextConfig = {
       },
     ];
   },
-  allowedDevOrigins: ["127.0.0.1"],
+  allowedDevOrigins: ["127.0.0.1", "79.143.185.101"],
   reactCompiler: true,
   cacheComponents: true,
   images: {
