@@ -46,7 +46,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "react-doctor": "^0.7.6",
     "tailwindcss": "^4.3.2",
-    "typescript": "^7.0.2"
+    "typescript": "5"
   },
   "ignoreScripts": [
     "sharp",
