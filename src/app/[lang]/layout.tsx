@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { cormorant, hindSiliguri, inter, jetbrainsMono } from "@/lib/fonts";
+import {
+  cormorant,
+  dmSans,
+  geist,
+  hindSiliguri,
+  inter,
+  jetbrainsMono,
+} from "@/lib/fonts";
 import "@/app/globals.css";
 
 import { getDictionary, locales } from "@/lib/i18n";
@@ -90,7 +97,7 @@ export default async function RootLayout({
   return (
     <html
       lang={resolvedParams.lang}
-      className={`${hindSiliguri.variable} ${cormorant.variable} ${jetbrainsMono.variable}  ${inter.variable} h-full antialiased`}
+      className={`${hindSiliguri.variable} ${cormorant.variable} ${jetbrainsMono.variable} ${inter.variable} ${dmSans.variable} ${geist.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

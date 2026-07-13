@@ -20,7 +20,8 @@
       "!src/lib/utils.ts",
       "!src/proxy.ts",
       "!.next",
-      "!.agents"
+      "!.agents",
+      "!public/**/*.svg"
     ]
   },
   "formatter": {

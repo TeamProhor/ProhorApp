@@ -108,26 +108,3 @@ export const siteJsonLd = {
     },
   ],
 };
-
-export const siteFaqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the Prohor Next.js Starter Kit?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Prohor is a modern and fast Next.js starter kit fully equipped with Supabase database, Tailwind CSS styling, Biome linting, and GSAP animation framework.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I get started with Prohor Starter Kit?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You can start development immediately by cloning the project and running 'bun install' followed by 'bun run dev'.",
-      },
-    },
-  ],
-};
