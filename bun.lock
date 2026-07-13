@@ -24,6 +24,7 @@
         "react-dom": "19.2.7",
         "react-resizable-panels": "^4.12.2",
         "recharts": "3.9.2",
+        "reicon-react": "^1.1.3",
         "shadcn": "^4.13.0",
         "sonner": "^2.0.7",
         "tailwind-merge": "^3.6.0",
@@ -1200,6 +1201,8 @@
     "redux": ["redux@5.0.1", "", {}, "sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w=="],
 
     "redux-thunk": ["redux-thunk@3.1.0", "", { "peerDependencies": { "redux": "^5.0.0" } }, "sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw=="],
+
+    "reicon-react": ["reicon-react@1.1.3", "", { "peerDependencies": { "react": ">=16.8.0" } }, "sha512-vpcWUcY3FK7baj2UvbX3+AdWfY2wy+alPjp7s+X6joAkxmzRU7E1Q08JTBUtESENuN9P8oa7GMTd4e69aP83sA=="],
 
     "require-from-string": ["require-from-string@2.0.2", "", {}, "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="],
 

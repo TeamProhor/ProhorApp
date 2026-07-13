@@ -14,8 +14,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-// biome-ignore lint/suspicious/noExplicitAny: Translation dictionary is dynamic
-export default function SubmitForm({ d }: { d: any }) {
+import type { SubmitFormProps } from "@/types";
+
+export default function SubmitForm({ d }: SubmitFormProps) {
   const [linkType, setLinkType] = useState<"figma" | "web">("web");
 
   return (
@@ -24,7 +25,6 @@ export default function SubmitForm({ d }: { d: any }) {
       <div className="flex flex-col items-center justify-center gap-[48px] flex-1 w-full max-w-[600px] px-[24px]">
         <h1
           className="text-center text-[32px] font-[600] font-sans tracking-tight text-foreground leading-tight"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: Translation string is safe
           dangerouslySetInnerHTML={{
             __html: d.title.replace("to ", 'to<br class="hidden md:block" /> '),
           }}
@@ -112,7 +112,6 @@ export default function SubmitForm({ d }: { d: any }) {
                 <FieldLabel
                   htmlFor="consent"
                   className="text-[14px] font-[400] text-muted-foreground leading-tight cursor-pointer"
-                  // biome-ignore lint/security/noDangerouslySetInnerHtml: Translation string is safe
                   dangerouslySetInnerHTML={{
                     __html: d.consent.replace(
                       "be ",

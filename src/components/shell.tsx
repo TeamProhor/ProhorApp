@@ -1,24 +1,15 @@
 "use client";
 
-import { List } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type React from "react";
 import { useState } from "react";
+import { List } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import type { ShellProps } from "@/types";
 import Sidebar from "./sidebar";
 
-export default function Shell({
-  children,
-  dict,
-  lang,
-}: {
-  children: React.ReactNode;
-  // biome-ignore lint/suspicious/noExplicitAny: Translation dictionary is dynamic
-  dict: any;
-  lang: string;
-}) {
+export default function Shell({ children, dict, lang }: ShellProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const _pathname = usePathname();
 
@@ -33,12 +24,7 @@ export default function Shell({
             onClick={() => setIsSidebarOpen(true)}
             className="flex flex-col justify-center h-auto hover:bg-transparent p-0"
           >
-            <List
-              size={28}
-              className="size-7"
-              weight="regular"
-              color="currentColor"
-            />
+            <List size={28} className="size-7" color="currentColor" />
           </Button>
 
           <Link
@@ -54,7 +40,7 @@ export default function Shell({
               className="mr-[12px]"
             />
             <h3 className="text-[18px] font-[800] text-foreground whitespace-nowrap mt-[3px]">
-              Kole Jain
+              FrostFoe
             </h3>
           </Link>
 

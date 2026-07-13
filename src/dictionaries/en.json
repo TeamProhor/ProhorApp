@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Kole Jain - UX/UI Designer",
-    "description": "Portfolio of Kole Jain, a UX/UI Designer exploring product and front-end.",
-    "ogTitle": "Kole Jain",
-    "ogDescription": "UX/UI Designer exploring product and front-end.",
-    "twitterTitle": "Kole Jain",
-    "twitterDescription": "UX/UI Designer exploring product and front-end."
+    "title": "FrostFoe - Web Developer",
+    "description": "Portfolio of FrostFoe, a Web Developer exploring product and front-end.",
+    "ogTitle": "FrostFoe",
+    "ogDescription": "Web Developer.",
+    "twitterTitle": "FrostFoe",
+    "twitterDescription": "Web Developer."
   },
   "jsonLd": {
-    "name": "Kole Jain",
-    "description": "Portfolio of Kole Jain",
+    "name": "FrostFoe",
+    "description": "Portfolio of FrostFoe",
     "language": "en"
   },
   "sidebar": {

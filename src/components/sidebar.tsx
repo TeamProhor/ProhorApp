@@ -1,28 +1,19 @@
 "use client";
 
 import {
-  Archive,
-  FolderOpen,
-  House,
   InstagramLogo,
   LinkedinLogo,
-  PaperPlaneRight,
   YoutubeLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Archive, FolderOpen, Home, Send } from "@/components/icons";
 import { LanguageToggler } from "@/components/language-toggler";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { Button } from "@/components/ui/button";
-
-interface SidebarProps {
-  onClose?: () => void;
-  // biome-ignore lint/suspicious/noExplicitAny: Translation dictionary is dynamic
-  dict: any;
-  lang: string;
-}
+import type { SidebarProps } from "@/types";
 
 export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -31,7 +22,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
   const d = dict.sidebar;
 
   const navItems = [
-    { name: d.home, path: `/${lang}`, exact: true, icon: House },
+    { name: d.home, path: `/${lang}`, exact: true, icon: Home },
     {
       name: d.resources,
       path: `/${lang}/resources`,
@@ -44,25 +35,25 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
       name: d.submit,
       path: `/${lang}/submit`,
       exact: false,
-      icon: PaperPlaneRight,
+      icon: Send,
     },
   ];
 
   const socialItems = [
     {
       name: "Youtube",
-      url: "https://youtube.com/@kolejain",
+      url: "https://youtube.com/@frostfoe",
       icon: YoutubeLogo,
       stat: "66k",
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/uiuxdailytips",
+      url: "https://instagram.com/frostfoe",
       icon: InstagramLogo,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/kolejain",
+      url: "https://linkedin.com/in/frostfoe",
       icon: LinkedinLogo,
     },
   ];
@@ -90,7 +81,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
               <h3
                 className={`font-[800] text-[18px] lg:text-[16px] whitespace-nowrap mt-[3px] transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
               >
-                Kole Jain
+                FrostFoe
               </h3>
             </Link>
 
@@ -169,12 +160,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
                 title={isCollapsed ? item.name : undefined}
               >
                 <div className="flex items-center gap-[8px]">
-                  <Icon
-                    size={24}
-                    weight="regular"
-                    className="shrink-0"
-                    color="currentColor"
-                  />
+                  <Icon size={24} className="shrink-0" color="currentColor" />
                   <span
                     className={`text-[14px] text-foreground whitespace-nowrap transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
                   >
@@ -209,8 +195,9 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
             src="/images/Frame 1814106577.webp"
             alt="announcement"
             width={400}
-            height={200}
             className="w-full h-auto rounded-[12px]"
+            style={{ height: "auto" }}
+            priority
           />
           <div className="flex flex-col gap-[2px] px-[4px]">
             <h4 className="text-[14px] text-foreground whitespace-nowrap">
@@ -236,12 +223,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
                 title={isCollapsed ? item.name : undefined}
               >
                 <div className="flex items-center gap-[8px]">
-                  <Icon
-                    size={24}
-                    weight="regular"
-                    className="shrink-0"
-                    color="currentColor"
-                  />
+                  <Icon size={24} className="shrink-0" color="currentColor" />
                   <span
                     className={`text-[14px] text-foreground whitespace-nowrap transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
                   >
@@ -270,13 +252,13 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           <LanguageToggler className="text-[14px]" />
         </div>
         <a
-          href="mailto:contact@kolejain.com"
+          href="mailto:contact@frostfoe.com"
           className="py-[4px] rounded-[8px] hover:bg-accent transition-colors overflow-hidden whitespace-nowrap"
         >
           <span
             className={`text-[14px] text-foreground transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
           >
-            contact@kolejain.com
+            contact@frostfoe.com
           </span>
         </a>
       </div>

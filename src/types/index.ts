@@ -1,5 +1,31 @@
 import type { ComponentPropsWithoutRef, ReactNode, SVGProps } from "react";
+import type en from "@/dictionaries/en.json";
 
+export type Dictionary = typeof en;
+
+export interface PageProps {
+  readonly params: Promise<{ readonly lang: string }>;
+}
+
+export interface LayoutProps extends PageProps {
+  readonly children: ReactNode;
+}
+
+export interface ShellProps {
+  readonly children: ReactNode;
+  readonly dict: Dictionary;
+  readonly lang: string;
+}
+
+export interface SidebarProps {
+  readonly onClose?: () => void;
+  readonly dict: Dictionary;
+  readonly lang: string;
+}
+
+export interface SubmitFormProps {
+  readonly d: Dictionary["submit"];
+}
 export interface ProhorIconProps
   extends Omit<SVGProps<SVGSVGElement>, "color"> {
   readonly color?: string;

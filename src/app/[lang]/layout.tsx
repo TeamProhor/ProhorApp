@@ -18,11 +18,11 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
+import type { LayoutProps, PageProps } from "@/types";
+
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
 
@@ -63,13 +63,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>;
-}>) {
+export default async function RootLayout({ children, params }: LayoutProps) {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
 
@@ -105,7 +99,6 @@ export default async function RootLayout({
         <link rel="apple-touch-icon" href="/icon.svg" />
         <script
           type="application/ld+json"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD payload is safe
           dangerouslySetInnerHTML={{
             __html: jsonLdString,
           }}

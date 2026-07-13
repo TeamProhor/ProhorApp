@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Language } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 export function LanguageToggler({ className }: { className?: string }) {
@@ -30,7 +31,8 @@ export function LanguageToggler({ className }: { className?: string }) {
       )}
       aria-label="Toggle language"
     >
-      {label}
+      <Language size={24} />
+      <span className="sr-only">{label}</span>
     </Link>
   );
 }

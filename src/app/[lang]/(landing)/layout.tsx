@@ -1,14 +1,12 @@
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement } from "react";
 import Shell from "@/components/shell";
 import { getDictionary } from "@/lib/i18n";
+import type { LayoutProps } from "@/types";
 
 export default async function LandingLayout({
   children,
   params,
-}: Readonly<{
-  children: ReactNode;
-  params: Promise<{ lang: string }>;
-}>): Promise<ReactElement> {
+}: LayoutProps): Promise<ReactElement> {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
 

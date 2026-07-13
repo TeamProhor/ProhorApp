@@ -3,11 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
 
-export default async function Stash({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+import type { PageProps } from "@/types";
+
+export default async function Stash({ params }: PageProps) {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
   const d = dict.stash;
@@ -35,7 +33,6 @@ export default async function Stash({
         {/* Heading */}
         <h1
           className="text-center text-[40px] leading-[115%] font-[600] font-sans tracking-tight text-foreground mb-[12px]"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: Translation string is safe
           dangerouslySetInnerHTML={{
             __html: d.heroTitle.replace(". ", ".<br/>"),
           }}
@@ -43,7 +40,6 @@ export default async function Stash({
 
         <h3
           className="text-center text-[16px] font-[400] font-sans text-foreground mb-[32px]"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: Translation string is safe
           dangerouslySetInnerHTML={{
             __html: d.heroSubtitle.replace(". Search", ". Search<br/>"),
           }}
@@ -169,8 +165,8 @@ export default async function Stash({
             src="/images/stash/search.webp"
             alt="Search by meaning"
             width={600}
-            height={400}
             className="mt-[24px] md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 w-[80%] md:w-[50%] h-auto"
+            style={{ height: "auto" }}
           />
         </div>
 
@@ -185,8 +181,8 @@ export default async function Stash({
             src="/images/stash/blazing-fast.webp"
             alt="Blazing fast"
             width={400}
-            height={300}
             className="w-[80%] h-auto"
+            style={{ height: "auto" }}
           />
         </div>
 
@@ -201,8 +197,8 @@ export default async function Stash({
             src="/images/stash/privacy.webp"
             alt="Privacy"
             width={400}
-            height={300}
             className="w-[80%] h-auto"
+            style={{ height: "auto" }}
           />
         </div>
       </div>

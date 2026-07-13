@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from "react"
-import { Moon, Sun } from "@phosphor-icons/react"
+import { Moon, Sun } from "@/components/icons"
 import { flushSync } from "react-dom"
 
 import { cn } from "@/lib/utils"

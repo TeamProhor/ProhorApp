@@ -1,13 +1,11 @@
-import { Play } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { Play } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
 
-export default async function Resources({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+import type { PageProps } from "@/types";
+
+export default async function Resources({ params }: PageProps) {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
   const d = dict;
@@ -74,7 +72,7 @@ export default async function Resources({
                   className="relative group cursor-pointer"
                 >
                   <div className="absolute inset-0 m-auto w-[40px] h-[40px] bg-primary rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Play size={24} weight="fill" color="currentColor" />
+                    <Play size={24} weight="Filled" color="currentColor" />
                   </div>
                   <Image
                     src={res.thumbnail}
@@ -82,6 +80,7 @@ export default async function Resources({
                     width={120}
                     height={120}
                     className="w-[120px] h-auto rounded-[8px] object-cover"
+                    style={{ width: "120px", height: "auto" }}
                   />
                 </a>
                 <h2 className="text-[22px] font-[600] font-sans tracking-tight text-foreground">
@@ -115,6 +114,7 @@ export default async function Resources({
                     width={800}
                     height={450}
                     className="w-full h-full object-cover"
+                    priority={i === 0}
                   />
                 </div>
               ))}

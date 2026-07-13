@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "কোল জেইন - ইউএক্স/ইউআই ডিজাইনার",
-    "description": "কোল জেইনের পোর্টফোলিও, একজন ইউএক্স/ইউআই ডিজাইনার।",
-    "ogTitle": "কোল জেইন",
-    "ogDescription": "ইউএক্স/ইউআই ডিজাইনার।",
-    "twitterTitle": "কোল জেইন",
-    "twitterDescription": "ইউএক্স/ইউআই ডিজাইনার।"
+    "title": "FrostFoe - ওয়েব ডেভেলপার",
+    "description": "FrostFoe এর পোর্টফোলিও, একজন ওয়েব ডেভেলপার।",
+    "ogTitle": "FrostFoe",
+    "ogDescription": "ওয়েব ডেভেলপার।",
+    "twitterTitle": "FrostFoe",
+    "twitterDescription": "ওয়েব ডেভেলপার।"
   },
   "jsonLd": {
-    "name": "কোল জেইন",
-    "description": "কোল জেইনের পোর্টফোলিও",
+    "name": "FrostFoe",
+    "description": "FrostFoe এর পোর্টফোলিও",
     "language": "bn"
   },
   "sidebar": {
