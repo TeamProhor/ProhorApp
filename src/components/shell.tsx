@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { List } from "@/components/icons";
+import { List, ProhorIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import type { ShellProps } from "@/types";
 import Sidebar from "./sidebar";
@@ -32,13 +31,7 @@ export default function Shell({ children, dict, lang }: ShellProps) {
             className="flex flex-row items-center"
             onClick={() => setIsSidebarOpen(false)}
           >
-            <Image
-              src="/icons/logo.svg"
-              alt="logo"
-              width={24}
-              height={24}
-              className="mr-[12px]"
-            />
+            <ProhorIcon className="size-6 mr-[12px] text-foreground" />
             <h3 className="text-[18px] font-[800] text-foreground whitespace-nowrap mt-[3px]">
               FrostFoe
             </h3>

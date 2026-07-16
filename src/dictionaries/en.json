@@ -63,5 +63,19 @@
     "submitBtn": "Submit",
     "madeWith": "made with",
     "and": "and"
+  },
+  "login": {
+    "title": "Welcome back!",
+    "newHere": "First time here?",
+    "signUpFree": "Sign up for free",
+    "sendMagicLink": "Send me the magic link",
+    "usePassword": "Sign in using password",
+    "or": "OR",
+    "sso": "Single sign-on (SSO)",
+    "termsText1": "You acknowledge that you read, and agree, to our",
+    "termsLink": "Terms of Service",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "termsText2": "."
   }
 }

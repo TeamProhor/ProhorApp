@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Archive, FolderOpen, Home, Send } from "@/components/icons";
+import { Archive, FolderOpen, Home, ProhorIcon, Send } from "@/components/icons";
 import { LanguageToggler } from "@/components/language-toggler";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { Button } from "@/components/ui/button";
@@ -71,13 +71,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
               onClick={onClose}
               className="flex items-center px-[8px] py-[4px] rounded-[8px] hover:bg-accent transition-colors overflow-hidden shrink-0"
             >
-              <Image
-                src="/icons/logo.svg"
-                alt="logo"
-                width={24}
-                height={24}
-                className="shrink-0 mr-[12px]"
-              />
+              <ProhorIcon className="shrink-0 mr-[12px] size-6 text-foreground" />
               <h3
                 className={`font-[800] text-[18px] lg:text-[16px] whitespace-nowrap mt-[3px] transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
               >
@@ -194,7 +188,8 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           <Image
             src="/images/Frame 1814106577.webp"
             alt="announcement"
-            width={400}
+            width={732}
+            height={420}
             className="w-full h-auto rounded-[12px]"
             style={{ height: "auto" }}
             priority

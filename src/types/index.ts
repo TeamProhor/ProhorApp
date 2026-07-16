@@ -26,11 +26,7 @@ export interface SidebarProps {
 export interface SubmitFormProps {
   readonly d: Dictionary["submit"];
 }
-export interface ProhorIconProps
-  extends Omit<SVGProps<SVGSVGElement>, "color"> {
-  readonly color?: string;
-  readonly animate?: boolean;
-}
+
 
 export interface ThemeProviderProps {
   readonly children: ReactNode;

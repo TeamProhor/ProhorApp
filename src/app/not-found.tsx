@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cormorant, hindSiliguri, inter, jetbrainsMono } from "@/lib/fonts";
-import { ProhorIcon } from "@/lib/icons";
+import { ProhorIcon } from "@/components/icons";
 import "@/app/globals.css";
 
 export default function NotFound() {
@@ -19,7 +19,7 @@ export default function NotFound() {
       <body className="min-h-full flex flex-col">
         <main className="flex flex-grow min-h-screen flex-col items-center justify-center bg-background px-6">
           <div className="flex flex-col items-center gap-6 text-center">
-            <ProhorIcon animate={true} className="size-24" />
+            <ProhorIcon className="size-24" />
 
             <div className="flex flex-col gap-2">
               <h1 className="text-balance text-4xl font-normal tracking-tight font-serif text-foreground">
