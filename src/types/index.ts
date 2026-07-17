@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ReactNode, SVGProps } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import type en from "@/dictionaries/en.json";
 
 export type Dictionary = typeof en;
@@ -26,7 +26,6 @@ export interface SidebarProps {
 export interface SubmitFormProps {
   readonly d: Dictionary["submit"];
 }
-
 
 export interface ThemeProviderProps {
   readonly children: ReactNode;

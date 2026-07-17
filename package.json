@@ -16,7 +16,7 @@
     "@phosphor-icons/react": "^2.1.10",
     "@shadcn/react": "^0.2.1",
     "@supabase/ssr": "^0.12.3",
-    "@supabase/supabase-js": "^2.110.6",
+    "@supabase/supabase-js": "^2.110.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -40,13 +40,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.3",
-    "@tailwindcss/postcss": "^4.3.2",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
     "react-doctor": "^0.7.8",
-    "tailwindcss": "^4.3.2",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   },
   "ignoreScripts": [

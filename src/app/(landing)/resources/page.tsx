@@ -3,11 +3,8 @@ import { Play } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
 
-import type { PageProps } from "@/types";
-
-export default async function Resources({ params }: PageProps) {
-  const resolvedParams = await params;
-  const dict = await getDictionary(resolvedParams.lang);
+export default async function Resources() {
+  const dict = await getDictionary();
   const d = dict;
 
   const resources = [

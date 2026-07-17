@@ -27,7 +27,6 @@ const nextConfig = {
   },
   allowedDevOrigins: ["127.0.0.1", "79.143.185.101"],
   reactCompiler: true,
-  cacheComponents: true,
   images: {
     formats: ["image/avif", "image/webp"],
   },

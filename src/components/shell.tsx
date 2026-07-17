@@ -27,7 +27,7 @@ export default function Shell({ children, dict, lang }: ShellProps) {
           </Button>
 
           <Link
-            href={`/${lang}`}
+            href={`/`}
             className="flex flex-row items-center"
             onClick={() => setIsSidebarOpen(false)}
           >

@@ -3,11 +3,8 @@ import { Archive, FolderOpen, Send } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
 
-import type { PageProps } from "@/types";
-
-export default async function Home({ params }: PageProps) {
-  const resolvedParams = await params;
-  const dict = await getDictionary(resolvedParams.lang);
+export default async function Home() {
+  const dict = await getDictionary();
   const d = dict;
 
   return (
@@ -26,7 +23,7 @@ export default async function Home({ params }: PageProps) {
             variant="outline"
             className="flex flex-row items-center gap-[8px] px-[12px] py-[4px] bg-muted rounded-[12px] border-[0.5px] border-border hover:bg-accent transition-colors shadow-none text-foreground font-sans font-[400] h-auto text-[14px]"
           >
-            <Link href={`/${resolvedParams.lang}/resources`}>
+            <Link href={`/resources`}>
               <FolderOpen size={24} className="size-6" color="currentColor" />
               {d.sidebar.resources}
             </Link>
@@ -37,7 +34,7 @@ export default async function Home({ params }: PageProps) {
             variant="outline"
             className="flex flex-row items-center gap-[8px] px-[12px] py-[4px] bg-muted rounded-[12px] border-[0.5px] border-border hover:bg-accent transition-colors shadow-none text-foreground font-sans font-[400] h-auto text-[14px]"
           >
-            <Link href={`/${resolvedParams.lang}/stash`}>
+            <Link href={`/stash`}>
               <Archive size={24} className="size-6" color="currentColor" />
               {d.home.stashForMacos}
             </Link>
@@ -48,7 +45,7 @@ export default async function Home({ params }: PageProps) {
             variant="outline"
             className="flex flex-row items-center gap-[8px] px-[12px] py-[4px] bg-muted rounded-[12px] border-[0.5px] border-border hover:bg-accent transition-colors shadow-none text-foreground font-sans font-[400] h-auto text-[14px]"
           >
-            <Link href={`/${resolvedParams.lang}/submit`}>
+            <Link href={`/submit`}>
               <Send size={24} className="size-6" color="currentColor" />
               {d.sidebar.submit}
             </Link>

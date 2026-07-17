@@ -3,11 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
 
-import type { PageProps } from "@/types";
-
-export default async function Stash({ params }: PageProps) {
-  const resolvedParams = await params;
-  const dict = await getDictionary(resolvedParams.lang);
+export default async function Stash() {
+  const dict = await getDictionary();
   const d = dict.stash;
 
   return (

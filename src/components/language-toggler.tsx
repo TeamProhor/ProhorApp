@@ -1,30 +1,40 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Language } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
-export function LanguageToggler({ className }: { className?: string }) {
-  const pathname = usePathname();
+export function LanguageToggler({
+  className,
+  lang,
+}: {
+  className?: string;
+  lang?: string;
+}) {
+  const router = useRouter();
 
-  // Basic language detection from pathname
-  const segments = pathname.split("/");
-  const currentLang = segments[1];
+  const [isBn, setIsBn] = useState(lang === "bn");
 
-  // Default to english if not found
-  const isBn = currentLang === "bn";
-  const targetLang = isBn ? "en" : "bn";
+  useEffect(() => {
+    const isClientBn = document.cookie.includes("NEXT_LOCALE=bn");
+    setIsBn(isClientBn);
+  }, []);
+
+  const toggleLanguage = () => {
+    const nextLang = isBn ? "en" : "bn";
+    // biome-ignore lint/suspicious/noDocumentCookie: Client side translation toggle
+    document.cookie = `NEXT_LOCALE=${nextLang}; path=/; max-age=31536000`;
+    setIsBn(!isBn);
+    router.refresh();
+  };
+
   const label = isBn ? "en" : "বাং";
 
-  const targetPath =
-    segments.length > 1
-      ? `/${targetLang}${segments.slice(2).length > 0 ? `/${segments.slice(2).join("/")}` : ""}`
-      : `/${targetLang}`;
-
   return (
-    <Link
-      href={targetPath}
+    <button
+      type="button"
+      onClick={toggleLanguage}
       className={cn(
         "flex items-center justify-center font-medium hover:text-muted-foreground transition-colors",
         className,
@@ -33,6 +43,6 @@ export function LanguageToggler({ className }: { className?: string }) {
     >
       <Language size={24} />
       <span className="sr-only">{label}</span>
-    </Link>
+    </button>
   );
 }

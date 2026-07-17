@@ -9,7 +9,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Archive, FolderOpen, Home, ProhorIcon, Send } from "@/components/icons";
+import {
+  Archive,
+  FolderOpen,
+  Home,
+  ProhorIcon,
+  Send,
+} from "@/components/icons";
 import { LanguageToggler } from "@/components/language-toggler";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { Button } from "@/components/ui/button";
@@ -22,18 +28,18 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
   const d = dict.sidebar;
 
   const navItems = [
-    { name: d.home, path: `/${lang}`, exact: true, icon: Home },
+    { name: d.home, path: `/`, exact: true, icon: Home },
     {
       name: d.resources,
-      path: `/${lang}/resources`,
+      path: `/resources`,
       exact: false,
       icon: FolderOpen,
       count: 21,
     },
-    { name: d.stashApp, path: `/${lang}/stash`, exact: false, icon: Archive },
+    { name: d.stashApp, path: `/stash`, exact: false, icon: Archive },
     {
       name: d.submit,
-      path: `/${lang}/submit`,
+      path: `/submit`,
       exact: false,
       icon: Send,
     },
@@ -67,7 +73,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-[48px] lg:gap-0">
           <div className="flex items-center justify-between w-full">
             <Link
-              href={`/${lang}`}
+              href={`/`}
               onClick={onClose}
               className="flex items-center px-[8px] py-[4px] rounded-[8px] hover:bg-accent transition-colors overflow-hidden shrink-0"
             >
@@ -177,7 +183,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
 
         {/* Announcement (Desktop Only) */}
         <Link
-          href={`/${lang}/submit`}
+          href={`/submit`}
           onClick={onClose}
           className={`hidden lg:flex flex-col gap-[8px] bg-background border-[0.5px] border-border rounded-[16px] hover:bg-muted transition-all duration-300 overflow-hidden shrink-0 ${
             isCollapsed
@@ -244,7 +250,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           className={`flex items-center gap-[12px] px-[8px] transition-opacity duration-200 ${isCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <ThemeToggler variant="circle" />
-          <LanguageToggler className="text-[14px]" />
+          <LanguageToggler lang={lang} className="text-[14px]" />
         </div>
         <a
           href="mailto:contact@frostfoe.com"

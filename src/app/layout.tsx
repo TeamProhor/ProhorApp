@@ -11,20 +11,12 @@ import {
 } from "@/lib/fonts";
 import "@/app/globals.css";
 
-import { getDictionary, locales } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
 import { siteJsonLd, siteMetadata } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
-}
-
-import type { LayoutProps, PageProps } from "@/types";
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const resolvedParams = await params;
-  const dict = await getDictionary(resolvedParams.lang);
+export async function generateMetadata(): Promise<Metadata> {
+  // Hardcode 'en' for layout metadata to keep layout static
+  const dict = await getDictionary("en");
 
   return {
     ...siteMetadata,
@@ -40,7 +32,7 @@ export async function generateMetadata({
       date: false,
     },
     alternates: {
-      canonical: `/${resolvedParams.lang}`,
+      canonical: `/`,
       languages: {
         "en-US": "/en",
         "bn-BD": "/bn",
@@ -50,8 +42,8 @@ export async function generateMetadata({
       ...siteMetadata.openGraph,
       title: dict.meta.ogTitle,
       description: dict.meta.ogDescription,
-      locale: resolvedParams.lang === "bn" ? "bn_BD" : "en_US",
-      url: `https://prohor-nextjs-starter-kit.vercel.app/${resolvedParams.lang}`,
+      locale: "en_US",
+      url: `https://prohor-nextjs-starter-kit.vercel.app/`,
     },
     twitter: {
       ...siteMetadata.twitter,
@@ -63,9 +55,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({ children, params }: LayoutProps) {
-  const resolvedParams = await params;
-  const dict = await getDictionary(resolvedParams.lang);
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  // Hardcode 'en' for layout to keep it static (user doesn't need SEO translation here)
+  const dict = await getDictionary("en");
 
   const dynamicJsonLd = {
     ...siteJsonLd,
@@ -76,7 +72,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           name: dict.jsonLd.name,
           description: dict.jsonLd.description,
           inLanguage: dict.jsonLd.language,
-          url: `https://prohor-nextjs-starter-kit.vercel.app/${resolvedParams.lang}/`,
+          url: `https://prohor-nextjs-starter-kit.vercel.app/`,
         };
       }
       return item;
@@ -90,7 +86,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
 
   return (
     <html
-      lang={resolvedParams.lang}
+      lang="en"
       className={`${hindSiliguri.variable} ${cormorant.variable} ${jetbrainsMono.variable} ${inter.variable} ${dmSans.variable} ${geist.variable} h-full antialiased`}
       suppressHydrationWarning
     >

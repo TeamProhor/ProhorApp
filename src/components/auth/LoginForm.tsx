@@ -1,10 +1,10 @@
 "use client";
 
+import { ProhorIcon, Send } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { ProhorIcon, Send } from "@/components/icons";
 import type { LoginFormProps } from "@/types";
 
 export default function LoginForm({ dict }: LoginFormProps) {
@@ -23,7 +23,7 @@ export default function LoginForm({ dict }: LoginFormProps) {
               </h1>
               <p className="text-pretty text-muted-foreground text-sm">
                 {l.newHere}{" "}
-                <a className="text-foreground hover:underline" href="#">
+                <a className="text-foreground hover:underline" href="/">
                   {l.signUpFree}
                 </a>
               </p>
@@ -36,7 +36,10 @@ export default function LoginForm({ dict }: LoginFormProps) {
                 type="email"
               />
               <div className="flex flex-col gap-2">
-                <Button className="w-full rounded-xl flex items-center justify-center gap-2" size="lg">
+                <Button
+                  className="w-full rounded-xl flex items-center justify-center gap-2"
+                  size="lg"
+                >
                   <Send className="size-4" />
                   {l.sendMagicLink}
                 </Button>
@@ -61,11 +64,11 @@ export default function LoginForm({ dict }: LoginFormProps) {
 
             <p className="w-11/12 text-pretty text-center text-muted-foreground text-xs">
               {l.termsText1}{" "}
-              <a className="underline hover:text-foreground" href="#">
+              <a className="underline hover:text-foreground" href="/">
                 {l.termsLink}
               </a>{" "}
               {l.and}{" "}
-              <a className="underline hover:text-foreground" href="#">
+              <a className="underline hover:text-foreground" href="/">
                 {l.privacyLink}
               </a>
               {l.termsText2}
