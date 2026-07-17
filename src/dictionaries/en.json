@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "FrostFoe - Web Developer",
-    "description": "Portfolio of FrostFoe, a Web Developer exploring product and front-end.",
-    "ogTitle": "FrostFoe",
+    "title": "Vawzine - Web Developer",
+    "description": "Portfolio of Vawzine, a Web Developer exploring product and front-end.",
+    "ogTitle": "Vawzine",
     "ogDescription": "Web Developer.",
-    "twitterTitle": "FrostFoe",
+    "twitterTitle": "Vawzine",
     "twitterDescription": "Web Developer."
   },
   "jsonLd": {
-    "name": "FrostFoe",
-    "description": "Portfolio of FrostFoe",
+    "name": "Vawzine",
+    "description": "Portfolio of Vawzine",
     "language": "en"
   },
   "sidebar": {

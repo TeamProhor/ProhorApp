@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "FrostFoe - ওয়েব ডেভেলপার",
-    "description": "FrostFoe এর পোর্টফোলিও, একজন ওয়েব ডেভেলপার।",
-    "ogTitle": "FrostFoe",
+    "title": "Vawzine - ওয়েব ডেভেলপার",
+    "description": "Vawzine এর পোর্টফোলিও, একজন ওয়েব ডেভেলপার।",
+    "ogTitle": "Vawzine",
     "ogDescription": "ওয়েব ডেভেলপার।",
-    "twitterTitle": "FrostFoe",
+    "twitterTitle": "Vawzine",
     "twitterDescription": "ওয়েব ডেভেলপার।"
   },
   "jsonLd": {
-    "name": "FrostFoe",
-    "description": "FrostFoe এর পোর্টফোলিও",
+    "name": "Vawzine",
+    "description": "Vawzine এর পোর্টফোলিও",
     "language": "bn"
   },
   "sidebar": {

@@ -48,18 +48,18 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
   const socialItems = [
     {
       name: "Youtube",
-      url: "https://youtube.com/@frostfoe",
+      url: "https://youtube.com/@vawzine",
       icon: YoutubeLogo,
       stat: "66k",
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/frostfoe",
+      url: "https://instagram.com/vawzine",
       icon: InstagramLogo,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/frostfoe",
+      url: "https://linkedin.com/in/vawzine",
       icon: LinkedinLogo,
     },
   ];
@@ -81,7 +81,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
               <h3
                 className={`font-[800] text-[18px] lg:text-[16px] whitespace-nowrap mt-[3px] transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
               >
-                FrostFoe
+                Vawzine
               </h3>
             </Link>
 
@@ -253,13 +253,13 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           <LanguageToggler lang={lang} className="text-[14px]" />
         </div>
         <a
-          href="mailto:contact@frostfoe.com"
+          href="mailto:contact@vawzine.com"
           className="py-[4px] rounded-[8px] hover:bg-accent transition-colors overflow-hidden whitespace-nowrap"
         >
           <span
             className={`text-[14px] text-foreground transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
           >
-            contact@frostfoe.com
+            contact@vawzine.com
           </span>
         </a>
       </div>

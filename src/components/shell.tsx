@@ -33,7 +33,7 @@ export default function Shell({ children, dict, lang }: ShellProps) {
           >
             <ProhorIcon className="size-6 mr-[12px] text-foreground" />
             <h3 className="text-[18px] font-[800] text-foreground whitespace-nowrap mt-[3px]">
-              FrostFoe
+              Vawzine
             </h3>
           </Link>
 
