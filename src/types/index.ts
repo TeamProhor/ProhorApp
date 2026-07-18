@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode, ComponentType } from "react";
 import type en from "@/dictionaries/en.json";
 
 export type Dictionary = typeof en;
@@ -55,20 +55,43 @@ export interface ThemeTogglerProps extends ComponentPropsWithoutRef<"button"> {
 }
 
 export interface LoginFormProps {
-  readonly dict: {
-    login: {
-      title: string;
-      newHere: string;
-      signUpFree: string;
-      sendMagicLink: string;
-      usePassword: string;
-      or: string;
-      sso: string;
-      termsText1: string;
-      termsLink: string;
-      and: string;
-      privacyLink: string;
-      termsText2: string;
-    };
-  };
+  readonly dict: Dictionary;
+}
+
+export interface AppBadgeChipProps {
+  readonly iconSrc: string;
+  readonly iconAlt: string;
+  readonly text: string;
+  readonly className?: string;
+}
+
+export interface DownloadMacButtonProps {
+  readonly text: string;
+  readonly className?: string;
+}
+
+export interface Resource {
+  readonly id: string;
+  readonly title: string;
+  readonly url: string;
+  readonly thumbnail: string;
+  readonly images: readonly string[];
+}
+
+export interface ResourceRowCardProps {
+  readonly resource: Resource;
+  readonly previewText: string;
+  readonly downloadText: string;
+}
+
+export interface NavItem {
+  readonly name: string;
+  readonly path: string;
+  readonly exact: boolean;
+  readonly icon: ComponentType<{
+    readonly size?: number;
+    readonly color?: string;
+    readonly className?: string;
+  }>;
+  readonly count?: number;
 }

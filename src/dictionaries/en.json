@@ -14,8 +14,9 @@
   },
   "sidebar": {
     "home": "Home",
-    "resources": "Resources",
-    "stashApp": "Stash App",
+    "freeDrops": "Free Drops",
+    "vipDrops": "VIP Drops",
+    "wins": "Wins",
     "submit": "Submit",
     "collapse": "Collapse",
     "announcementTitle": "Got a website or SaaS?",
@@ -24,14 +25,19 @@
   "home": {
     "title": "Designing the homepage took longer than making the rest of the site...",
     "subtitle": "So I decided to ship the useful things first (more cool things coming soon!)",
-    "stashForMacos": "Stash for macOS"
+    "winsForMacos": "Wins for macOS"
   },
-  "resources": {
+  "freeDrops": {
     "title": "A growing collection of Figma components from my design videos and builds.",
     "preview": "Preview",
     "download": "Download"
   },
-  "stash": {
+  "vipDrops": {
+    "title": "Figma components and design builds exclusively for VIP members.",
+    "preview": "Preview",
+    "download": "Download"
+  },
+  "wins": {
     "title": "Stash",
     "heroTitle": "Save instantly. Find effortlessly.",
     "heroSubtitle": "Capture inspiration at a click. Search for it with ideas, not keywords",
@@ -57,8 +63,10 @@
     "email": "Email",
     "figmaLink": "Figma Link",
     "webLink": "Web Link",
+    "link": "Link",
     "figmaDesc": "Please make sure the file is viewable by anyone with the link",
     "webDesc": "Please make sure the site is publicly accessible",
+    "linkDesc": "Please make sure the link is publicly accessible",
     "consent": "I understand by submitting my work it may be featured and/or redesigned in a Youtube video",
     "submitBtn": "Submit",
     "madeWith": "made with",
@@ -77,5 +85,29 @@
     "and": "and",
     "privacyLink": "Privacy Policy",
     "termsText2": "."
+  },
+  "dmca": {
+    "title": "DMCA & Copyright Policy",
+    "disclosureTitle": "DMCA DISCLOSURE",
+    "disclosureText": "VAWZINE™ is an educational channel dedicated to sharing knowledge about money-making strategies and skill/self development. We are committed to helping individuals learn and grow.",
+    "whatWeDoTitle": "WHAT WE DO",
+    "whatWeDoText": "We create and share original content focused on financial education and skill-building. We offer our own digital products and VIP membership for those seeking premium resources - we do NOT sell courses.",
+    "noticeTitle": "IMPORTANT NOTICE",
+    "noticeText": "All content shared on this channel is intended for educational purposes only. VAWZINE™ does NOT sell courses, only our own original digital products and VIP membership. VAWZINE™ and its administrators are not responsible for how individuals choose to apply the information provided.",
+    "complianceTitle": "COPYRIGHT COMPLIANCE",
+    "complianceText": "VAWZINE™ respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA) under 17 U.S.C. § 512. If you believe any content on our channel infringes upon your copyright, please submit a written DMCA notice containing the following:",
+    "requirement1": "Your physical or electronic signature (or that of an authorized representative).",
+    "requirement2": "Identification of the copyrighted work you claim has been infringed.",
+    "requirement3": "Identification of the specific material and its location on our channel.",
+    "requirement4": "Your contact information (address, phone number, email).",
+    "requirement5": "A statement of good faith belief that the use is unauthorized.",
+    "requirement6": "A statement, under penalty of perjury, that the information provided is accurate and you are authorized to act on behalf of the copyright owner.",
+    "contactTitle": "CONTACT FOR DMCA REQUESTS",
+    "emailLabel": "Email: ",
+    "adminLabel": "Admin: ",
+    "responseTime": "We will review and respond to valid DMCA requests within 1-5 business days.",
+    "disclaimerTitle": "DISCLAIMER",
+    "disclaimerText": "The owners and administrators of VAWZINE™ are not liable for any actions taken by users based on the content shared. All information is provided 'as is' for educational purposes.",
+    "allRightsReserved": "VAWZINE™ - All Rights Reserved"
   }
 }

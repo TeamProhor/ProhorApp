@@ -11,6 +11,7 @@ import Moon from "reicon-react/icons/Moon";
 import Play from "reicon-react/icons/Play";
 import Send from "reicon-react/icons/Send";
 import Sun from "reicon-react/icons/Sun";
+import Trophy from "reicon-react/icons/Trophy";
 
 export function ProhorIcon({
   className = "",
@@ -52,4 +53,5 @@ export {
   Play,
   Send,
   Sun,
+  Trophy,
 };

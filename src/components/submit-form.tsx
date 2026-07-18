@@ -12,12 +12,11 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { MadeWithFooter } from "@/components/shared/made-with-footer";
 
 import type { SubmitFormProps } from "@/types";
 
 export default function SubmitForm({ d }: SubmitFormProps) {
-  const [linkType, setLinkType] = useState<"figma" | "web">("web");
 
   return (
     <div className="flex flex-col items-center justify-between min-h-screen w-full pt-[64px]">
@@ -63,38 +62,22 @@ export default function SubmitForm({ d }: SubmitFormProps) {
               </Field>
             </div>
 
-            {/* Toggle & Link */}
+            {/* Link Input */}
             <Field>
-              <ToggleGroup
-                type="single"
-                value={linkType}
-                onValueChange={(val) => {
-                  if (val) setLinkType(val as "figma" | "web");
-                }}
-                className="w-full bg-muted rounded-[8px] p-[4px] gap-[4px] justify-start"
+              <FieldLabel
+                htmlFor="link"
+                className="text-foreground font-[400] text-[16px]"
               >
-                <ToggleGroupItem
-                  value="figma"
-                  className="flex-1 rounded-[6px] data-[state=on]:bg-accent data-[state=on]:text-foreground text-muted-foreground font-[400]"
-                >
-                  {d.figmaLink}
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="web"
-                  className="flex-1 rounded-[6px] data-[state=on]:bg-accent data-[state=on]:text-foreground text-muted-foreground font-[400]"
-                >
-                  {d.webLink}
-                </ToggleGroupItem>
-              </ToggleGroup>
-
+                {d.link}
+              </FieldLabel>
               <Input
                 id="link"
                 type="url"
                 placeholder="https://yoursite.com"
-                className="bg-white border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground mt-[8px]"
+                className="bg-white border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
               />
               <FieldDescription className="text-muted-foreground text-[14px]">
-                {linkType === "figma" ? d.figmaDesc : d.webDesc}
+                {d.linkDesc}
               </FieldDescription>
             </Field>
 
@@ -135,35 +118,12 @@ export default function SubmitForm({ d }: SubmitFormProps) {
         </form>
       </div>
 
-      {/* Footer */}
-      <div className="flex flex-row items-center justify-center gap-[2px] pb-[32px] w-full mt-auto">
-        <h3 className="text-muted-foreground whitespace-nowrap text-[16px] font-[400] font-sans">
-          {d.madeWith}
-        </h3>
-        <Image
-          src="/icons/heart.svg"
-          alt="heart"
-          width={24}
-          height={24}
-          className="shrink-0"
-        />
-        <h3 className="text-muted-foreground whitespace-nowrap text-[16px] font-[400] font-sans">
-          {d.and}
-        </h3>
-        <Image
-          src="/icons/coffee.svg"
-          alt="coffee"
-          width={24}
-          height={24}
-          className="shrink-0"
-        />
-        <h3 className="text-muted-foreground whitespace-nowrap text-[16px] font-[400] font-sans">
-          —
-        </h3>
-        <h4 className="text-muted-foreground whitespace-nowrap text-[14px] font-[400] font-sans">
-          2026
-        </h4>
-      </div>
+      {/* Footer / made with */}
+      <MadeWithFooter
+        madeWithText={d.madeWith}
+        andText={d.and}
+        className="gap-[12px] mt-auto lg:hidden pt-[48px]"
+      />
     </div>
   );
 }

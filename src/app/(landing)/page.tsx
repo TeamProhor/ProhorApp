@@ -23,9 +23,9 @@ export default async function Home() {
             variant="outline"
             className="flex flex-row items-center gap-[8px] px-[12px] py-[4px] bg-muted rounded-[12px] border-[0.5px] border-border hover:bg-accent transition-colors shadow-none text-foreground font-sans font-[400] h-auto text-[14px]"
           >
-            <Link href={`/resources`}>
+            <Link href={`/free-drops`}>
               <FolderOpen size={24} className="size-6" color="currentColor" />
-              {d.sidebar.resources}
+              {d.sidebar.freeDrops}
             </Link>
           </Button>
 
@@ -34,9 +34,9 @@ export default async function Home() {
             variant="outline"
             className="flex flex-row items-center gap-[8px] px-[12px] py-[4px] bg-muted rounded-[12px] border-[0.5px] border-border hover:bg-accent transition-colors shadow-none text-foreground font-sans font-[400] h-auto text-[14px]"
           >
-            <Link href={`/stash`}>
+            <Link href={`/wins`}>
               <Archive size={24} className="size-6" color="currentColor" />
-              {d.home.stashForMacos}
+              {d.home.winsForMacos}
             </Link>
           </Button>
 

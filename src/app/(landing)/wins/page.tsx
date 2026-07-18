@@ -1,31 +1,24 @@
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/i18n";
+import { MadeWithFooter } from "@/components/shared/made-with-footer";
+import { AppBadgeChip } from "@/components/shared/app-badge-chip";
+import { DownloadMacButton } from "@/components/shared/download-mac-button";
 
-export default async function Stash() {
+export default async function Wins() {
   const dict = await getDictionary();
-  const d = dict.stash;
+  const d = dict.wins;
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen">
       {/* Hero Section */}
       <div className="flex flex-col items-center pt-[64px] pb-[48px] px-[16px] w-full max-w-[1400px]">
         {/* Chip */}
-        <Badge
-          variant="outline"
-          className="flex flex-row items-center gap-[6px] px-[32px] py-[16px] bg-background border-border rounded-[32px] mb-[8px]"
-        >
-          <Image
-            src="/images/stash/mini-icon.webp"
-            alt="stash icon"
-            width={24}
-            height={24}
-          />
-          <h5 className="text-[12px] font-sans text-foreground font-normal border-0">
-            {dict.sidebar.stashApp}
-          </h5>
-        </Badge>
+        <AppBadgeChip
+          iconSrc="/images/stash/mini-icon.webp"
+          iconAlt="stash icon"
+          text={dict.sidebar.wins}
+          className="mb-[8px]"
+        />
 
         {/* Heading */}
         <h1
@@ -43,17 +36,10 @@ export default async function Stash() {
         />
 
         {/* Download Button */}
-        <Button className="flex flex-row items-center justify-center gap-[8px] bg-primary hover:bg-primary/90 transition-colors rounded-[16px] px-[16px] py-[24px] mb-[64px]">
-          <Image
-            src="/images/stash/apple-logo.svg"
-            alt="apple logo"
-            width={24}
-            height={24}
-          />
-          <span className="text-primary-foreground text-[16px] font-[400] font-sans">
-            {d.downloadMac}
-          </span>
-        </Button>
+        <DownloadMacButton
+          text={d.downloadMac}
+          className="mb-[64px]"
+        />
 
         {/* App Dock Outer (Mockup) */}
         <div className="relative w-full max-w-[800px] flex justify-center mb-[64px]">
@@ -162,6 +148,7 @@ export default async function Stash() {
             src="/images/stash/search.webp"
             alt="Search by meaning"
             width={600}
+            height={400}
             className="mt-[24px] md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 w-[80%] md:w-[50%] h-auto"
             style={{ height: "auto" }}
           />
@@ -178,6 +165,7 @@ export default async function Stash() {
             src="/images/stash/blazing-fast.webp"
             alt="Blazing fast"
             width={400}
+            height={300}
             className="w-[80%] h-auto"
             style={{ height: "auto" }}
           />
@@ -194,6 +182,7 @@ export default async function Stash() {
             src="/images/stash/privacy.webp"
             alt="Privacy"
             width={400}
+            height={300}
             className="w-[80%] h-auto"
             style={{ height: "auto" }}
           />
@@ -202,68 +191,29 @@ export default async function Stash() {
 
       {/* CTA Section */}
       <div className="flex flex-col items-center py-[64px] px-[24px] text-center">
-        <Badge
-          variant="outline"
-          className="flex flex-row items-center gap-[6px] px-[32px] py-[16px] bg-background border-border rounded-[32px] mb-[16px]"
-        >
-          <Image
-            src="/images/stash/mini-icon.webp"
-            alt="stash icon"
-            width={24}
-            height={24}
-          />
-          <h5 className="text-[12px] font-sans text-foreground font-normal border-0">
-            {dict.sidebar.stashApp}
-          </h5>
-        </Badge>
+        <AppBadgeChip
+          iconSrc="/images/stash/mini-icon.webp"
+          iconAlt="stash icon"
+          text={dict.sidebar.wins}
+          className="mb-[16px]"
+        />
         <h1 className="text-[32px] font-[600] font-sans tracking-tight text-foreground mb-[8px]">
           {d.ctaTitle}
         </h1>
         <h3 className="text-[16px] font-[400] font-sans text-foreground mb-[32px]">
           {d.ctaSubtitle}
         </h3>
-        <Button className="flex flex-row items-center justify-center gap-[8px] bg-primary hover:bg-primary/90 transition-colors rounded-[16px] px-[16px] py-[24px]">
-          <Image
-            src="/images/stash/apple-logo.svg"
-            alt="apple logo"
-            width={24}
-            height={24}
-          />
-          <span className="text-primary-foreground text-[16px] font-[400] font-sans">
-            {d.downloadMac}
-          </span>
-        </Button>
+        <DownloadMacButton
+          text={d.downloadMac}
+        />
       </div>
 
-      {/* Footer */}
-      <div className="flex flex-row items-center justify-center gap-[2px] pt-[64px] pb-[32px] w-full">
-        <h3 className="text-muted-foreground whitespace-nowrap text-[16px] font-[400] font-sans">
-          {dict.submit.madeWith}
-        </h3>
-        <Image
-          src="/icons/heart.svg"
-          alt="heart"
-          width={24}
-          height={24}
-          className="shrink-0"
-        />
-        <h3 className="text-muted-foreground whitespace-nowrap text-[16px] font-[400] font-sans">
-          {dict.submit.and}
-        </h3>
-        <Image
-          src="/icons/coffee.svg"
-          alt="coffee"
-          width={24}
-          height={24}
-          className="shrink-0"
-        />
-        <h3 className="text-muted-foreground whitespace-nowrap text-[16px] font-[400] font-sans">
-          —
-        </h3>
-        <h4 className="text-muted-foreground whitespace-nowrap text-[14px] font-[400] font-sans">
-          2026
-        </h4>
-      </div>
+      {/* Footer / made with */}
+      <MadeWithFooter
+        madeWithText={dict.submit.madeWith}
+        andText={dict.submit.and}
+        className="gap-[12px] mt-auto lg:hidden pt-[48px]"
+      />
     </div>
   );
 }

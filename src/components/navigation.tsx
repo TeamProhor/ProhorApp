@@ -1,49 +1,27 @@
 "use client";
 
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   InstagramLogo,
   LinkedinLogo,
   YoutubeLogo,
 } from "@phosphor-icons/react/dist/ssr";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import {
-  Archive,
-  FolderOpen,
-  Home,
-  ProhorIcon,
-  Send,
-} from "@/components/icons";
+import { ProhorIcon } from "@/components/icons";
 import { LanguageToggler } from "@/components/language-toggler";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { Button } from "@/components/ui/button";
+import { getNavItems } from "@/lib/navigation";
 import type { SidebarProps } from "@/types";
 
-export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
+export function Sidebar({ onClose, dict, lang }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const pathname = usePathname();
 
   const d = dict.sidebar;
-
-  const navItems = [
-    { name: d.home, path: `/`, exact: true, icon: Home },
-    {
-      name: d.resources,
-      path: `/resources`,
-      exact: false,
-      icon: FolderOpen,
-      count: 21,
-    },
-    { name: d.stashApp, path: `/stash`, exact: false, icon: Archive },
-    {
-      name: d.submit,
-      path: `/submit`,
-      exact: false,
-      icon: Send,
-    },
-  ];
+  const navItems = getNavItems(dict);
 
   const socialItems = [
     {
@@ -69,7 +47,6 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
       className={`w-full h-full lg:h-[calc(100vh-40px)] lg:m-[20px] shrink-0 z-10 flex flex-col pt-0 lg:pt-[16px] justify-between overflow-x-hidden overflow-y-auto no-scrollbar transition-all duration-[300ms] ease-[cubic-bezier(0.83,0,0.17,1)] ${isCollapsed ? "lg:w-[40px]" : "lg:w-[192px]"}`}
     >
       <div className="flex flex-col gap-[24px]">
-        {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-[48px] lg:gap-0">
           <div className="flex items-center justify-between w-full">
             <Link
@@ -85,7 +62,6 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
               </h3>
             </Link>
 
-            {/* Mobile Close Button */}
             <Button
               variant="ghost"
               size="icon"
@@ -109,20 +85,19 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
                   rx="4"
                   stroke="currentColor"
                   strokeWidth="1.29"
-                ></rect>
+                />
                 <path
                   d="M15 19L15 5"
                   stroke="currentColor"
                   strokeWidth="1.29"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                ></path>
+                />
               </svg>
             </Button>
           </div>
         </div>
 
-        {/* Collapse (Desktop Only) */}
         <Button
           variant="ghost"
           onClick={() => setIsCollapsed(!isCollapsed)}
@@ -142,7 +117,6 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           </span>
         </Button>
 
-        {/* Navigation */}
         <nav className="flex flex-col gap-[4px] lg:-mt-[16px]">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -160,7 +134,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
                 title={isCollapsed ? item.name : undefined}
               >
                 <div className="flex items-center gap-[8px]">
-                  <Icon size={24} className="shrink-0" color="currentColor" />
+                  <Icon size={24} className="shrink-0" />
                   <span
                     className={`text-[14px] text-foreground whitespace-nowrap transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
                   >
@@ -181,7 +155,6 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           })}
         </nav>
 
-        {/* Announcement (Desktop Only) */}
         <Link
           href={`/submit`}
           onClick={onClose}
@@ -210,7 +183,6 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
           </div>
         </Link>
 
-        {/* Socials */}
         <div className="flex flex-col gap-[4px]">
           {socialItems.map((item) => {
             const Icon = item.icon;
@@ -224,7 +196,7 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
                 title={isCollapsed ? item.name : undefined}
               >
                 <div className="flex items-center gap-[8px]">
-                  <Icon size={24} className="shrink-0" color="currentColor" />
+                  <Icon size={24} className="shrink-0" />
                   <span
                     className={`text-[14px] text-foreground whitespace-nowrap transition-opacity duration-200 ${isCollapsed ? "opacity-0" : "opacity-100"}`}
                   >
@@ -244,10 +216,13 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
         </div>
       </div>
 
-      {/* Footer Controls */}
-      <div className="flex flex-col gap-[12px] mt-[16px] px-[8px]">
+      <div className="flex flex-col gap-[12px] mt-[24px] lg:mt-[32px] px-[8px] items-center lg:items-stretch border-t border-border/50 pt-[16px]">
         <div
-          className={`flex items-center gap-[12px] px-[8px] transition-opacity duration-200 ${isCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`flex transition-all duration-300 ${
+            isCollapsed
+              ? "flex-col items-center gap-[16px] px-0"
+              : "flex-row items-center gap-[12px] px-[8px]"
+          }`}
         >
           <ThemeToggler variant="circle" />
           <LanguageToggler lang={lang} className="text-[14px]" />
@@ -264,5 +239,44 @@ export default function Sidebar({ onClose, dict, lang }: SidebarProps) {
         </a>
       </div>
     </aside>
+  );
+}
+
+interface MobileBottomNavProps {
+  readonly dict: any;
+}
+
+export function MobileBottomNav({ dict }: MobileBottomNavProps) {
+  const pathname = usePathname();
+  const navItems = getNavItems(dict);
+
+  return (
+    <div className="lg:hidden absolute bottom-[12px] left-[16px] right-[16px] z-20 flex justify-center pointer-events-none">
+      <div className="flex items-center justify-between bg-muted/80 backdrop-blur-xl border-[0.5px] border-border rounded-[24px] p-[8px] shadow-lg pointer-events-auto w-full max-w-[400px]">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = item.exact
+            ? pathname === item.path
+            : pathname.startsWith(item.path);
+
+          return (
+            <Link
+              key={item.name}
+              href={item.path}
+              className={`flex flex-1 flex-col items-center justify-center py-[8px] px-[4px] rounded-[16px] transition-all duration-300 ${
+                isActive
+                  ? "bg-foreground text-background shadow-sm"
+                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
+              }`}
+            >
+              <Icon size={24} className="mb-[4px]" />
+              <span className="text-[11px] font-[600] tracking-tight whitespace-nowrap">
+                {item.name}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
   );
 }
