@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
 import {
   InstagramLogo,
   LinkedinLogo,
   YoutubeLogo,
 } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { ProhorIcon } from "@/components/icons";
 import { LanguageToggler } from "@/components/language-toggler";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { Button } from "@/components/ui/button";
 import { getNavItems } from "@/lib/navigation";
-import type { SidebarProps } from "@/types";
+import type { Dictionary, SidebarProps } from "@/types";
 
 export function Sidebar({ onClose, dict, lang }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -143,9 +143,9 @@ export function Sidebar({ onClose, dict, lang }: SidebarProps) {
                 </div>
                 {item.count && (
                   <div
-                    className={`absolute right-[8px] bg-[#D9F7D7] rounded-[8px] px-[8px] py-[2px] flex items-center transition-opacity duration-200 ${isCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+                    className={`absolute right-[8px] bg-success-badge rounded-[8px] px-[8px] py-[2px] flex items-center transition-opacity duration-200 ${isCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
                   >
-                    <span className="text-[#149610] text-[12px] font-[600]">
+                    <span className="text-success-badge-foreground text-[12px] font-[600]">
                       {item.count}
                     </span>
                   </div>
@@ -243,7 +243,7 @@ export function Sidebar({ onClose, dict, lang }: SidebarProps) {
 }
 
 interface MobileBottomNavProps {
-  readonly dict: any;
+  readonly dict: Dictionary;
 }
 
 export function MobileBottomNav({ dict }: MobileBottomNavProps) {

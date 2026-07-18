@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { Language } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
@@ -14,18 +13,12 @@ export function LanguageToggler({
 }) {
   const router = useRouter();
 
-  const [isBn, setIsBn] = useState(lang === "bn");
-
-  useEffect(() => {
-    const isClientBn = document.cookie.includes("NEXT_LOCALE=bn");
-    setIsBn(isClientBn);
-  }, []);
+  const isBn = lang === "bn";
 
   const toggleLanguage = () => {
     const nextLang = isBn ? "en" : "bn";
     // biome-ignore lint/suspicious/noDocumentCookie: Client side translation toggle
     document.cookie = `NEXT_LOCALE=${nextLang}; path=/; max-age=31536000`;
-    setIsBn(!isBn);
     router.refresh();
   };
 

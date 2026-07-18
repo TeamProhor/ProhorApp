@@ -35,22 +35,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#294056',      // → "Deep Muted Teal-Navy" — Primary CTA
-        background: '#FCFAFA',   // → "Warm Barely-There Cream" — Page BG
+        primary: "#294056", // → "Deep Muted Teal-Navy" — Primary CTA
+        background: "#FCFAFA", // → "Warm Barely-There Cream" — Page BG
       },
       fontFamily: {
-        sans: ['Manrope', 'sans-serif'],
+        sans: ["Manrope", "sans-serif"],
       },
       borderRadius: {
-        card: '12px',
-        button: '8px',
+        card: "12px",
+        button: "8px",
       },
       spacing: {
-        section: '5rem',
-      }
-    }
-  }
-}
+        section: "5rem",
+      },
+    },
+  },
+};
 ```
 
 Map each custom value to a descriptive name and role.
@@ -62,8 +62,8 @@ Look for `:root` or `html` blocks in global CSS:
 ```css
 :root {
   --color-primary: #294056;
-  --color-bg: #FCFAFA;
-  --font-heading: 'Manrope', sans-serif;
+  --color-bg: #fcfafa;
+  --font-heading: "Manrope", sans-serif;
   --radius-card: 12px;
   --spacing-section: 5rem;
 }
@@ -77,10 +77,13 @@ their intended role.
 Next.js uses `next/font` for optimized font loading:
 
 ```tsx
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Playfair_Display } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display' })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
 ```
 
 The `variable` names hint at usage: `--font-display` for headlines,
@@ -90,14 +93,14 @@ The `variable` names hint at usage: `--font-display` for headlines,
 
 Don't read every component. Focus on these archetypes:
 
-| Component Type | What to Extract |
-|:---|:---|
-| Layout / Shell | Max-width, padding, grid structure |
-| Button / CTA | Border radius, colors, hover states, padding |
-| Card | Shadow, border, radius, internal spacing |
-| Nav / Header | Typography treatment, active states |
-| Form / Input | Border, focus state, padding |
-| Hero / Landing section | Spacing, typography scale, alignment |
+| Component Type         | What to Extract                              |
+| :--------------------- | :------------------------------------------- |
+| Layout / Shell         | Max-width, padding, grid structure           |
+| Button / CTA           | Border radius, colors, hover states, padding |
+| Card                   | Shadow, border, radius, internal spacing     |
+| Nav / Header           | Typography treatment, active states          |
+| Form / Input           | Border, focus state, padding                 |
+| Hero / Landing section | Spacing, typography scale, alignment         |
 
 For each, look at the `className` prop for Tailwind classes or the
 `styled()` / `css()` calls for CSS-in-JS values.
@@ -110,20 +113,20 @@ If the project uses CSS-in-JS, look for theme providers:
 // ThemeProvider wrapping the app
 const theme = {
   colors: {
-    primary: '#294056',
-    background: '#FCFAFA',
+    primary: "#294056",
+    background: "#FCFAFA",
   },
   fonts: {
-    heading: 'Manrope, sans-serif',
+    heading: "Manrope, sans-serif",
   },
   radii: {
-    card: '12px',
-    button: '8px',
-  }
-}
+    card: "12px",
+    button: "8px",
+  },
+};
 ```
 
-This theme object *is* the design system. Extract directly.
+This theme object _is_ the design system. Extract directly.
 
 ## Component Library Integration
 

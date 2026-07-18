@@ -1,7 +1,7 @@
 import { Lock, Send } from "@/components/icons";
-import { getDictionary } from "@/lib/i18n";
 import { MadeWithFooter } from "@/components/shared/made-with-footer";
 import { Card, CardContent } from "@/components/ui/card";
+import { getDictionary } from "@/lib/i18n";
 
 export default async function DmcaPage() {
   const dict = await getDictionary();
@@ -57,8 +57,8 @@ export default async function DmcaPage() {
                   d.requirement4,
                   d.requirement5,
                   d.requirement6,
-                ].map((req, idx) => (
-                  <li key={idx} className="flex gap-[8px] items-start">
+                ].map((req) => (
+                  <li key={req} className="flex gap-[8px] items-start">
                     <span className="w-[4px] h-[4px] rounded-full bg-primary mt-[7px] shrink-0" />
                     <span>{req}</span>
                   </li>
@@ -73,7 +73,9 @@ export default async function DmcaPage() {
               </div>
               <div className="flex flex-col gap-[4px] text-foreground font-medium pl-1">
                 <p>
-                  <span className="text-muted-foreground mr-[4px] font-normal">{d.emailLabel}</span>
+                  <span className="text-muted-foreground mr-[4px] font-normal">
+                    {d.emailLabel}
+                  </span>
                   <a
                     href="mailto:VAWZINEOFFICIEL@GMAIL.COM"
                     className="text-primary hover:underline"
@@ -82,7 +84,9 @@ export default async function DmcaPage() {
                   </a>
                 </p>
                 <p>
-                  <span className="text-muted-foreground mr-[4px] font-normal">{d.adminLabel}</span>
+                  <span className="text-muted-foreground mr-[4px] font-normal">
+                    {d.adminLabel}
+                  </span>
                   <a
                     href="https://t.me/ILI_I003"
                     target="_blank"
@@ -91,7 +95,9 @@ export default async function DmcaPage() {
                   >
                     @ILI_I003
                   </a>{" "}
-                  <span className="text-xs text-muted-foreground font-normal">(ANONYMOUS)</span>
+                  <span className="text-xs text-muted-foreground font-normal">
+                    (ANONYMOUS)
+                  </span>
                 </p>
               </div>
               <p className="text-[11px] italic text-muted-foreground pl-1">

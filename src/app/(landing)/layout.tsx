@@ -7,8 +7,7 @@ export default async function LandingLayout({
 }: {
   children: React.ReactNode;
 }): Promise<ReactElement> {
-  const dict = await getDictionary();
-  const lang = await getLocale();
+  const [dict, lang] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
     <Shell dict={dict} lang={lang}>

@@ -26,17 +26,17 @@ Modern vanilla CSS projects often define a design system via custom properties:
 :root {
   /* Colors */
   --color-primary: #294056;
-  --color-bg: #FCFAFA;
-  --color-surface: #F5F5F5;
-  --color-text: #2C2C2C;
-  --color-text-secondary: #6B6B6B;
-  --color-border: #E0E0E0;
-  --color-success: #10B981;
-  --color-error: #EF4444;
+  --color-bg: #fcfafa;
+  --color-surface: #f5f5f5;
+  --color-text: #2c2c2c;
+  --color-text-secondary: #6b6b6b;
+  --color-border: #e0e0e0;
+  --color-success: #10b981;
+  --color-error: #ef4444;
 
   /* Typography */
-  --font-heading: 'Manrope', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
   --font-size-base: 1rem;
   --line-height-body: 1.7;
 
@@ -52,7 +52,7 @@ Modern vanilla CSS projects often define a design system via custom properties:
   --radius-card: 12px;
 
   /* Shadows */
-  --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 ```
 
@@ -63,26 +63,26 @@ This is the cleanest source of truth. Extract directly and name each token.
 ```scss
 // _variables.scss
 $colors: (
-  'primary': #294056,
-  'background': #FCFAFA,
-  'surface': #F5F5F5,
-  'text': #2C2C2C,
-  'text-muted': #6B6B6B,
+  "primary": #294056,
+  "background": #fcfafa,
+  "surface": #f5f5f5,
+  "text": #2c2c2c,
+  "text-muted": #6b6b6b,
 );
 
-$font-stack-heading: 'Manrope', sans-serif;
-$font-stack-body: 'Inter', sans-serif;
+$font-stack-heading: "Manrope", sans-serif;
+$font-stack-body: "Inter", sans-serif;
 
 $breakpoints: (
-  'mobile': 768px,
-  'tablet': 1024px,
-  'desktop': 1280px,
+  "mobile": 768px,
+  "tablet": 1024px,
+  "desktop": 1280px,
 );
 
 $spacers: (
-  'section': 5rem,
-  'component': 2rem,
-  'element': 1rem,
+  "section": 5rem,
+  "component": 2rem,
+  "element": 1rem,
 );
 ```
 
@@ -92,9 +92,9 @@ SASS maps are essentially design token dictionaries. Extract all values.
 
 ```less
 @primary-color: #294056;
-@bg-color: #FCFAFA;
-@text-color: #2C2C2C;
-@font-heading: 'Manrope', sans-serif;
+@bg-color: #fcfafa;
+@text-color: #2c2c2c;
+@font-heading: "Manrope", sans-serif;
 @border-radius-base: 8px;
 ```
 

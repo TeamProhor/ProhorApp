@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ReactNode, ComponentType } from "react";
+import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 import type en from "@/dictionaries/en.json";
 
 export type Dictionary = typeof en;

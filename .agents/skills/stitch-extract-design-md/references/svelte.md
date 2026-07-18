@@ -54,6 +54,7 @@ theme store.
 ```
 
 **Extraction points:**
+
 - Component props (like `variant`) reveal the intended variant system
 - `var(--*)` references → trace to `app.css`
 - Transition values reveal the interaction design philosophy
@@ -72,19 +73,19 @@ Svelte projects heavily use CSS custom properties for theming:
 /* app.css */
 :root {
   --color-primary: #294056;
-  --color-bg: #FCFAFA;
-  --color-surface: #F5F5F5;
-  --color-text: #2C2C2C;
-  --color-text-muted: #6B6B6B;
+  --color-bg: #fcfafa;
+  --color-surface: #f5f5f5;
+  --color-text: #2c2c2c;
+  --color-text-muted: #6b6b6b;
 
-  --font-heading: 'Manrope', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-full: 9999px;
 
-  --shadow-hover: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.06);
   --spacing-section: 5rem;
 }
 ```
@@ -95,6 +96,7 @@ of your design system extraction.
 ## Skeleton UI / DaisyUI / Flowbite-Svelte
 
 If component libraries are used:
+
 - **Skeleton UI**: Theme defined in `tailwind.config.js` using Skeleton's
   design token system. Look for custom theme config object.
 - **DaisyUI**: Theme in `tailwind.config.js` → `daisyui.themes` array.

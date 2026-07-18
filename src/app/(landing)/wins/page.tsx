@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { getDictionary } from "@/lib/i18n";
-import { MadeWithFooter } from "@/components/shared/made-with-footer";
-import { AppBadgeChip } from "@/components/shared/app-badge-chip";
 import { DownloadMacButton } from "@/components/shared/download-mac-button";
+import { MadeWithFooter } from "@/components/shared/made-with-footer";
+import { getDictionary } from "@/lib/i18n";
 
 export default async function Wins() {
   const dict = await getDictionary();
@@ -12,34 +11,29 @@ export default async function Wins() {
     <div className="flex flex-col items-center w-full min-h-screen">
       {/* Hero Section */}
       <div className="flex flex-col items-center pt-[64px] pb-[48px] px-[16px] w-full max-w-[1400px]">
-        {/* Chip */}
-        <AppBadgeChip
-          iconSrc="/images/stash/mini-icon.webp"
-          iconAlt="stash icon"
-          text={dict.sidebar.wins}
-          className="mb-[8px]"
-        />
+        <h1 className="text-center text-[40px] leading-[115%] font-[600] font-sans tracking-tight text-foreground mb-[12px]">
+          {d.heroTitle.split(". ")[0]}.
+          {d.heroTitle.split(". ")[1] && (
+            <>
+              <br />
+              {d.heroTitle.split(". ").slice(1).join(". ")}
+            </>
+          )}
+        </h1>
 
-        {/* Heading */}
-        <h1
-          className="text-center text-[40px] leading-[115%] font-[600] font-sans tracking-tight text-foreground mb-[12px]"
-          dangerouslySetInnerHTML={{
-            __html: d.heroTitle.replace(". ", ".<br/>"),
-          }}
-        />
-
-        <h3
-          className="text-center text-[16px] font-[400] font-sans text-foreground mb-[32px]"
-          dangerouslySetInnerHTML={{
-            __html: d.heroSubtitle.replace(". Search", ". Search<br/>"),
-          }}
-        />
+        <h3 className="text-center text-[16px] font-[400] font-sans text-foreground mb-[32px]">
+          {d.heroSubtitle.split(". Search")[0]}
+          {d.heroSubtitle.includes(". Search") && (
+            <>
+              . Search
+              <br />
+              {d.heroSubtitle.split(". Search").slice(1).join(". Search")}
+            </>
+          )}
+        </h3>
 
         {/* Download Button */}
-        <DownloadMacButton
-          text={d.downloadMac}
-          className="mb-[64px]"
-        />
+        <DownloadMacButton text={d.downloadMac} className="mb-[64px]" />
 
         {/* App Dock Outer (Mockup) */}
         <div className="relative w-full max-w-[800px] flex justify-center mb-[64px]">
@@ -64,12 +58,11 @@ export default async function Wins() {
         </div>
       </div>
 
-      {/* Feature Slider Section */}
       <div className="flex flex-row gap-[24px] px-[24px] w-full overflow-x-auto pb-[64px] no-scrollbar snap-x snap-mandatory">
         {/* Save */}
-        <div className="relative flex-shrink-0 w-[85vw] md:w-[400px] h-[500px] rounded-[24px] overflow-hidden bg-[#1A1A1A] snap-center">
+        <div className="relative flex-shrink-0 w-[85vw] md:w-[400px] h-[500px] rounded-[24px] overflow-hidden bg-feature-card snap-center">
           <div className="absolute z-10 p-[24px]">
-            <h3 className="text-primary-foreground text-[16px] font-[600] font-sans tracking-tight">
+            <h3 className="text-feature-card-foreground text-[16px] font-[600] font-sans tracking-tight">
               {d.step1Title}
             </h3>
             <h4 className="text-muted-foreground text-[14px] font-[400] font-sans">
@@ -89,9 +82,9 @@ export default async function Wins() {
         </div>
 
         {/* Search */}
-        <div className="relative flex-shrink-0 w-[85vw] md:w-[400px] h-[500px] rounded-[24px] overflow-hidden bg-[#1A1A1A] snap-center">
+        <div className="relative flex-shrink-0 w-[85vw] md:w-[400px] h-[500px] rounded-[24px] overflow-hidden bg-feature-card snap-center">
           <div className="absolute z-10 p-[24px]">
-            <h3 className="text-primary-foreground text-[16px] font-[600] font-sans tracking-tight">
+            <h3 className="text-feature-card-foreground text-[16px] font-[600] font-sans tracking-tight">
               {d.step2Title}
             </h3>
             <h4 className="text-muted-foreground text-[14px] font-[400] font-sans">
@@ -111,9 +104,9 @@ export default async function Wins() {
         </div>
 
         {/* Find */}
-        <div className="relative flex-shrink-0 w-[85vw] md:w-[400px] h-[500px] rounded-[24px] overflow-hidden bg-[#1A1A1A] snap-center">
+        <div className="relative flex-shrink-0 w-[85vw] md:w-[400px] h-[500px] rounded-[24px] overflow-hidden bg-feature-card snap-center">
           <div className="absolute z-10 p-[24px]">
-            <h3 className="text-primary-foreground text-[16px] font-[600] font-sans tracking-tight">
+            <h3 className="text-feature-card-foreground text-[16px] font-[600] font-sans tracking-tight">
               {d.step3Title}
             </h3>
             <h4 className="text-muted-foreground text-[14px] font-[400] font-sans">
@@ -191,21 +184,13 @@ export default async function Wins() {
 
       {/* CTA Section */}
       <div className="flex flex-col items-center py-[64px] px-[24px] text-center">
-        <AppBadgeChip
-          iconSrc="/images/stash/mini-icon.webp"
-          iconAlt="stash icon"
-          text={dict.sidebar.wins}
-          className="mb-[16px]"
-        />
         <h1 className="text-[32px] font-[600] font-sans tracking-tight text-foreground mb-[8px]">
           {d.ctaTitle}
         </h1>
         <h3 className="text-[16px] font-[400] font-sans text-foreground mb-[32px]">
           {d.ctaSubtitle}
         </h3>
-        <DownloadMacButton
-          text={d.downloadMac}
-        />
+        <DownloadMacButton text={d.downloadMac} />
       </div>
 
       {/* Footer / made with */}

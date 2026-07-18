@@ -26,18 +26,15 @@ export function ProhorIcon({
       {...props}
     >
       <title>prohorIcon</title>
-      <path d="M9.15918 8.13525H15.8868" strokeWidth="3.52576" />
-      <path d="M9.15918 12.5674H15.8868" strokeWidth="3.52576" />
-      <path d="M9.15918 17H15.8868" strokeWidth="3.52576" />
+      <path d="M9.16 8.14H15.89" strokeWidth="3.53" />
+      <path d="M9.16 12.57H15.89" strokeWidth="3.53" />
+      <path d="M9.16 17H15.89" strokeWidth="3.53" />
       <path
-        d="M12.3537 2.64941C12.3537 6.94462 8.87175 10.4266 4.57654 10.4266"
-        strokeWidth="3.52576"
+        d="M12.35 2.65C12.35 6.94 8.87 10.43 4.58 10.43"
+        strokeWidth="3.53"
         opacity="0.15"
       />
-      <path
-        d="M11.7772 2C11.7772 6.29521 8.29521 9.77716 4 9.77716"
-        strokeWidth="3.52576"
-      />
+      <path d="M11.78 2C11.78 6.3 8.3 9.78 4 9.78" strokeWidth="3.53" />
     </svg>
   );
 }

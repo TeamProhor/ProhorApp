@@ -1,6 +1,6 @@
-import { getDictionary } from "@/lib/i18n";
 import { MadeWithFooter } from "@/components/shared/made-with-footer";
 import { ResourceRowCard } from "@/components/shared/resource-row-card";
+import { getDictionary } from "@/lib/i18n";
 
 export default async function VipDrops() {
   const dict = await getDictionary();

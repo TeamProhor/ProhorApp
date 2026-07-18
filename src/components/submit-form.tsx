@@ -1,7 +1,5 @@
 "use client";
-
-import Image from "next/image";
-import { useState } from "react";
+import { MadeWithFooter } from "@/components/shared/made-with-footer";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -12,12 +10,10 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { MadeWithFooter } from "@/components/shared/made-with-footer";
 
 import type { SubmitFormProps } from "@/types";
 
 export default function SubmitForm({ d }: SubmitFormProps) {
-
   return (
     <div className="flex flex-col items-center justify-between min-h-screen w-full pt-[64px]">
       {/* Main Content */}
@@ -43,7 +39,7 @@ export default function SubmitForm({ d }: SubmitFormProps) {
                 <Input
                   id="name"
                   placeholder="Kole"
-                  className="bg-white border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
+                  className="bg-background border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
                 />
               </Field>
               <Field>
@@ -57,7 +53,7 @@ export default function SubmitForm({ d }: SubmitFormProps) {
                   id="email"
                   type="email"
                   placeholder="panic@thedis.co"
-                  className="bg-white border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
+                  className="bg-background border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
                 />
               </Field>
             </div>
@@ -74,7 +70,7 @@ export default function SubmitForm({ d }: SubmitFormProps) {
                 id="link"
                 type="url"
                 placeholder="https://yoursite.com"
-                className="bg-white border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
+                className="bg-background border-border rounded-[8px] focus-visible:ring-ring text-[16px] placeholder:text-muted-foreground"
               />
               <FieldDescription className="text-muted-foreground text-[14px]">
                 {d.linkDesc}

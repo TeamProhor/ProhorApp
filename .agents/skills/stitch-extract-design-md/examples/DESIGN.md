@@ -1,88 +1,88 @@
 ---
 name: Alpine Peak
 colors:
-  surface: '#fcf8fa'
-  surface-dim: '#dcd9db'
-  surface-bright: '#fcf8fa'
-  surface-container-lowest: '#ffffff'
-  surface-container-low: '#f6f3f5'
-  surface-container: '#f0edef'
-  surface-container-high: '#eae7e9'
-  surface-container-highest: '#e4e2e4'
-  on-surface: '#1b1b1d'
-  on-surface-variant: '#45464d'
-  inverse-surface: '#303032'
-  inverse-on-surface: '#f3f0f2'
-  outline: '#76777d'
-  outline-variant: '#c6c6cd'
-  surface-tint: '#565e74'
-  primary: '#000000'
-  on-primary: '#ffffff'
-  primary-container: '#131b2e'
-  on-primary-container: '#7c839b'
-  inverse-primary: '#bec6e0'
-  secondary: '#5c5f61'
-  on-secondary: '#ffffff'
-  secondary-container: '#e0e3e5'
-  on-secondary-container: '#626567'
-  tertiary: '#000000'
-  on-tertiary: '#ffffff'
-  tertiary-container: '#161c22'
-  on-tertiary-container: '#7e848c'
-  error: '#ba1a1a'
-  on-error: '#ffffff'
-  error-container: '#ffdad6'
-  on-error-container: '#93000a'
-  primary-fixed: '#dae2fd'
-  primary-fixed-dim: '#bec6e0'
-  on-primary-fixed: '#131b2e'
-  on-primary-fixed-variant: '#3f465c'
-  secondary-fixed: '#e0e3e5'
-  secondary-fixed-dim: '#c4c7c9'
-  on-secondary-fixed: '#191c1e'
-  on-secondary-fixed-variant: '#444749'
-  tertiary-fixed: '#dde3eb'
-  tertiary-fixed-dim: '#c1c7cf'
-  on-tertiary-fixed: '#161c22'
-  on-tertiary-fixed-variant: '#41474e'
-  background: '#fcf8fa'
-  on-background: '#1b1b1d'
-  surface-variant: '#e4e2e4'
+  surface: "#fcf8fa"
+  surface-dim: "#dcd9db"
+  surface-bright: "#fcf8fa"
+  surface-container-lowest: "#ffffff"
+  surface-container-low: "#f6f3f5"
+  surface-container: "#f0edef"
+  surface-container-high: "#eae7e9"
+  surface-container-highest: "#e4e2e4"
+  on-surface: "#1b1b1d"
+  on-surface-variant: "#45464d"
+  inverse-surface: "#303032"
+  inverse-on-surface: "#f3f0f2"
+  outline: "#76777d"
+  outline-variant: "#c6c6cd"
+  surface-tint: "#565e74"
+  primary: "#000000"
+  on-primary: "#ffffff"
+  primary-container: "#131b2e"
+  on-primary-container: "#7c839b"
+  inverse-primary: "#bec6e0"
+  secondary: "#5c5f61"
+  on-secondary: "#ffffff"
+  secondary-container: "#e0e3e5"
+  on-secondary-container: "#626567"
+  tertiary: "#000000"
+  on-tertiary: "#ffffff"
+  tertiary-container: "#161c22"
+  on-tertiary-container: "#7e848c"
+  error: "#ba1a1a"
+  on-error: "#ffffff"
+  error-container: "#ffdad6"
+  on-error-container: "#93000a"
+  primary-fixed: "#dae2fd"
+  primary-fixed-dim: "#bec6e0"
+  on-primary-fixed: "#131b2e"
+  on-primary-fixed-variant: "#3f465c"
+  secondary-fixed: "#e0e3e5"
+  secondary-fixed-dim: "#c4c7c9"
+  on-secondary-fixed: "#191c1e"
+  on-secondary-fixed-variant: "#444749"
+  tertiary-fixed: "#dde3eb"
+  tertiary-fixed-dim: "#c1c7cf"
+  on-tertiary-fixed: "#161c22"
+  on-tertiary-fixed-variant: "#41474e"
+  background: "#fcf8fa"
+  on-background: "#1b1b1d"
+  surface-variant: "#e4e2e4"
 typography:
   display-lg:
     fontFamily: Inter
     fontSize: 48px
-    fontWeight: '800'
+    fontWeight: "800"
     lineHeight: 56px
     letterSpacing: -0.02em
   headline-md:
     fontFamily: Inter
     fontSize: 24px
-    fontWeight: '700'
+    fontWeight: "700"
     lineHeight: 32px
     letterSpacing: -0.01em
   body-base:
     fontFamily: Inter
     fontSize: 16px
-    fontWeight: '400'
+    fontWeight: "400"
     lineHeight: 24px
-    letterSpacing: '0'
+    letterSpacing: "0"
   body-bold:
     fontFamily: Inter
     fontSize: 16px
-    fontWeight: '600'
+    fontWeight: "600"
     lineHeight: 24px
-    letterSpacing: '0'
+    letterSpacing: "0"
   label-caps:
     fontFamily: Lexend
     fontSize: 12px
-    fontWeight: '700'
+    fontWeight: "700"
     lineHeight: 16px
     letterSpacing: 0.05em
   stat-lg:
     fontFamily: Lexend
     fontSize: 32px
-    fontWeight: '600'
+    fontWeight: "600"
     lineHeight: 40px
     letterSpacing: -0.02em
 rounded:

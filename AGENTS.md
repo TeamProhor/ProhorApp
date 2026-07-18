@@ -1,8 +1,11 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # Next.js & Project Conventions
+
 Read `node_modules/next/dist/docs/` for Next.js breaking changes. Heed deprecation notices.
 
 # Agent Coding Rules
+
 1. **No Code Comments**: CRITICAL. No inline/block/jsdoc comments. Code must be self-documenting.
 2. **Package Manager**: CRITICAL. ONLY use `bun` and `bunx`. Never use `npm`, `npx`, `pnpm`, `yarn`.
 3. **shadcn/ui**: Follow `.agents/skills/shadcn/SKILL.md`. Use semantic colors (e.g. `bg-primary`), `size-*`, and `cn()`. Avoid arbitrary tailwind colors, `space-y-*`, or `space-x-*`.

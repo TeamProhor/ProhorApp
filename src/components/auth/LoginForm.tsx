@@ -1,13 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { ProhorIcon, Send } from "@/components/icons";
+import { MadeWithFooter } from "@/components/shared/made-with-footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Field } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Field } from "@/components/ui/field";
-import { MadeWithFooter } from "@/components/shared/made-with-footer";
 import type { LoginFormProps } from "@/types";
 
 export default function LoginForm({ dict }: LoginFormProps) {
@@ -38,9 +38,9 @@ export default function LoginForm({ dict }: LoginFormProps) {
             </h1>
             <p className="text-pretty text-muted-foreground text-sm">
               {l.newHere}{" "}
-              <a className="text-foreground hover:underline" href="/">
+              <Link className="text-foreground hover:underline" href="/">
                 {l.signUpFree}
-              </a>
+              </Link>
             </p>
           </div>
 
@@ -61,11 +61,14 @@ export default function LoginForm({ dict }: LoginFormProps) {
               </Button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+            <form
+              onSubmit={handleSubmit}
+              className="w-full flex flex-col gap-4"
+            >
               <Field>
                 <Input
                   required
-                  className="w-full rounded-xl bg-white"
+                  className="w-full rounded-xl bg-background"
                   placeholder="Your email"
                   type="email"
                   value={email}
@@ -113,13 +116,13 @@ export default function LoginForm({ dict }: LoginFormProps) {
 
           <p className="w-11/12 text-pretty text-center text-muted-foreground text-xs">
             {l.termsText1}{" "}
-            <a className="underline hover:text-foreground" href="/">
+            <Link className="underline hover:text-foreground" href="/">
               {l.termsLink}
-            </a>{" "}
+            </Link>{" "}
             {l.and}{" "}
-            <a className="underline hover:text-foreground" href="/">
+            <Link className="underline hover:text-foreground" href="/">
               {l.privacyLink}
-            </a>
+            </Link>
             {l.termsText2}
           </p>
         </div>

@@ -163,7 +163,8 @@ type Plugins = keyof PluginMap;
 // Resolves the module type for a given key, then picks the named export matching the key
 // this allows to have the type definitions for autocomplete in your code editor
 type PluginModule<K extends Plugins> = Awaited<ReturnType<PluginMap[K]>>;
-type PluginExport<K extends Plugins> = PluginModule<K>[K & keyof PluginModule<K>];
+type PluginExport<K extends Plugins> = PluginModule<K>[K &
+  keyof PluginModule<K>];
 
 export default function () {
   // Register all the GSAP Plugins you want at this point
@@ -174,7 +175,9 @@ export default function () {
     not widely used in your app (for example in just a couple
     of components or a single route), you can use this method
   */
-  async function lazyLoadPlugin<K extends Plugins>(plugin: K): Promise<PluginExport<K>> {
+  async function lazyLoadPlugin<K extends Plugins>(
+    plugin: K,
+  ): Promise<PluginExport<K>> {
     const loader = pluginMap[plugin];
     const m = await loader();
     const p = (m as any)[plugin];

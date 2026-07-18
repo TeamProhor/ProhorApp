@@ -6,7 +6,7 @@ import { useState } from "react";
 import { List, ProhorIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import type { ShellProps } from "@/types";
-import { Sidebar, MobileBottomNav } from "./navigation";
+import { MobileBottomNav, Sidebar } from "./navigation";
 
 export default function Shell({ children, dict, lang }: ShellProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -34,7 +34,11 @@ export default function Shell({ children, dict, lang }: ShellProps) {
             onClick={() => setIsSidebarOpen(true)}
             className="flex flex-col justify-center h-auto hover:bg-transparent p-0"
           >
-            <List size={28} className="size-7 text-foreground" color="currentColor" />
+            <List
+              size={28}
+              className="size-7 text-foreground"
+              color="currentColor"
+            />
           </Button>
         </div>
       </div>
@@ -43,7 +47,7 @@ export default function Shell({ children, dict, lang }: ShellProps) {
       <button
         type="button"
         aria-label="Close sidebar"
-        className={`fixed inset-0 bg-black/20 z-30 transition-opacity duration-300 lg:hidden cursor-default border-none outline-none ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-overlay z-30 transition-opacity duration-300 lg:hidden cursor-default border-none outline-none ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={() => setIsSidebarOpen(false)}
       />
 

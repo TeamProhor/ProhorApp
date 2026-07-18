@@ -36,7 +36,7 @@ Vue components bundle template, script, and style together:
   background: var(--color-surface);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .card__title {
@@ -48,6 +48,7 @@ Vue components bundle template, script, and style together:
 ```
 
 **Key extraction points:**
+
 - `var(--*)` references → trace back to global CSS for the actual values
 - `scoped` styles → component-specific, but reveal consistent patterns
 - BEM naming (`.card__title`) → hints at component hierarchy
@@ -60,21 +61,21 @@ Vuetify projects define their design system explicitly:
 // plugins/vuetify.ts
 export default createVuetify({
   theme: {
-    defaultTheme: 'light',
+    defaultTheme: "light",
     themes: {
       light: {
         colors: {
-          primary: '#294056',
-          secondary: '#6B6B6B',
-          background: '#FCFAFA',
-          surface: '#F5F5F5',
-          error: '#EF4444',
-          success: '#10B981',
-        }
-      }
-    }
-  }
-})
+          primary: "#294056",
+          secondary: "#6B6B6B",
+          background: "#FCFAFA",
+          surface: "#F5F5F5",
+          error: "#EF4444",
+          success: "#10B981",
+        },
+      },
+    },
+  },
+});
 ```
 
 This is the design system declaration. Map each key to a functional role
